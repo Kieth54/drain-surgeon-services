@@ -1,70 +1,115 @@
+"use client";
+
+import Image from 'next/image';
+import { useState, useRef } from 'react';
 import { Droplet, IdCard, Wrench } from 'lucide-react';
+import PlumberImage from '@/assets/plumber.png';
+import PlumbImage from '@/assets/plumb_1.webp';
+import CameraImage from '@/assets/camera_nrew-1.webp';
+import { useVisibilityOptimizedTimer } from '@/hooks/useOptimizedTimer';
 
 const HeroBanner = () => {
+  const heroImages = [PlumberImage, PlumbImage, CameraImage];
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const containerRef = useRef<HTMLElement | null>(null);
+
+  // Use optimized timer that pauses when not visible
+  useVisibilityOptimizedTimer(
+    'hero-banner-rotation',
+    6000,
+    () => {
+      setCurrentIndex((prev) => (prev + 1) % heroImages.length);
+    },
+    containerRef
+  );
+
+  const currentImage = heroImages[currentIndex];
+
   return (
-    <section className="w-full bg-white pb-16">
+    <section ref={containerRef} className="w-full bg-white pb-16">
       <div className="container mx-auto px-10">
-        <div className="text-center pt-8 sm:pt-12">
-          {/* Emergency Response section */}
-          <h2 className="text-xl font-bold text-[#666666]">
-            Emergency Response
-          </h2>
-          <a href="tel:+27861758623" className="mt-2 text-primary-red no-underline group">
-            <h1 className="text-4xl sm:text-[48px] font-bold">
-              <span className="text-primary-red">Call: </span>
-              <span className="text-black">+27 861 758 623</span>
+        <div className="grid gap-10 pt-10 sm:pt-16 lg:grid-cols-[minmax(0,1.4fr)_minmax(0,1fr)] lg:items-center">
+          <div className="relative text-center lg:text-left">
+            <div className="hero-animated-blob -left-24 -top-24 h-72 w-72 hidden lg:block" aria-hidden="true" />
+            <div className="hero-animated-blob -right-10 bottom-[-60px] h-56 w-56 hidden lg:block opacity-60" aria-hidden="true" />
+            {/* Emergency Response section */}
+            <p className="text-sm font-semibold uppercase tracking-[0.18em] text-[#999999]">
+              24/7 Emergency Response
+            </p>
+            <h1 className="mt-3 text-4xl font-bold leading-tight text-black sm:text-[44px] lg:text-[48px]">
+              Trusted plumbers for
+              <br className="hidden sm:block" />
+              <span className="text-primary-red"> blocked drains</span> and
+              <br className="hidden sm:block" />
+              emergency repairs.
             </h1>
-          </a>
-          <p className="mt-4 text-[#666666] text-base leading-relaxed max-w-[550px] mx-auto">
-            Our team is well sanitised and takes all efforts to keep precautionary measures while working in your house.
-          </p>
-        </div>
+            <p className="mt-4 max-w-xl text-base leading-relaxed text-[#666666] mx-auto lg:mx-0">
+              The Drain Surgeon has provided professional plumbing services since 1979.
+              Fast, friendly, and security-cleared teams across South Africa.
+            </p>
 
-        {/* Ribbon Banner */}
-        <div className="flex justify-center my-8 sm:my-10">
-          <div className="relative bg-primary-red text-white py-3 px-6 shadow-[0_3px_6px_rgba(0,0,0,0.3)] w-full max-w-[450px] text-center">
-            <div className="absolute left-0 bottom-[-19px] w-0 h-0 border-t-[19px] border-t-transparent border-r-[20px] border-r-[#b30000] border-l-[10px] border-l-transparent -z-10" aria-hidden="true"></div>
-            <h4 className="text-[22px] font-bold uppercase tracking-wide">
-              PLUMBERS SINCE 1979
-            </h4>
-            <div className="absolute right-0 bottom-[-19px] w-0 h-0 border-t-[19px] border-t-transparent border-l-[20px] border-l-[#b30000] border-r-[10px] border-r-transparent -z-10" aria-hidden="true"></div>
-          </div>
-        </div>
-        
-        {/* Book a Plumber section */}
-        <div className="text-center">
-          <h3 className="text-3xl font-bold text-primary-red uppercase tracking-wide">
-            BOOK A PLUMBER NOW!
-          </h3>
-          <p className="mt-2 text-[22px] text-black">
-            (We will call you back in 15 Minutes)
-          </p>
-        </div>
+            <div className="mt-8 flex flex-col items-center gap-4 sm:flex-row sm:justify-center lg:justify-start">
+              <a
+                href="tel:+27861758623"
+                className="inline-flex items-center justify-center rounded-full bg-primary-red px-7 py-3 text-sm font-semibold text-white shadow-md transition hover:bg-[#b30000]"
+              >
+                Call Now: +27 861 758 623
+              </a>
+              <a
+                href="#booking"
+                className="inline-flex items-center justify-center rounded-full border border-[#dddddd] bg-white px-7 py-3 text-sm font-semibold text-[#333333] shadow-sm transition hover:border-primary-red hover:text-primary-red"
+              >
+                Book a Plumber Online
+              </a>
+            </div>
 
-        {/* Book Online Banner */}
-        <div className="mt-8 bg-primary-red text-white italic text-[22px] font-normal text-center py-4">
-          <h2>Book Online and make your experience smooth and enjoyable...</h2>
-        </div>
+            <p className="mt-3 text-xs text-[#999999]">
+              We aim to call you back within 15 minutes of receiving your request.
+            </p>
+          </div>
 
-        {/* Features section */}
-        <div className="mt-12 sm:mt-16 flex flex-col md:flex-row justify-center items-center md:items-start md:gap-x-16 lg:gap-x-24 gap-y-10">
-          <div className="flex flex-col items-center gap-4 text-center w-52">
-            <Droplet size={48} strokeWidth={1} className="text-black" />
-            <h5 className="font-medium text-base uppercase tracking-wider text-black">
-              BLOCKED DRAIN SPECIALISTS
-            </h5>
-          </div>
-          <div className="flex flex-col items-center gap-4 text-center w-52">
-            <IdCard size={48} strokeWidth={1} className="text-black" />
-            <h5 className="font-medium text-base uppercase tracking-wider text-black">
-              SECURITY-CLEARED TEAMS
-            </h5>
-          </div>
-          <div className="flex flex-col items-center gap-4 text-center w-52">
-            <Wrench size={48} strokeWidth={1} className="text-black" />
-            <h5 className="font-medium text-base uppercase tracking-wider text-black">
-              EXPERIENCED PLUMBERS
-            </h5>
+          <div className="relative overflow-hidden rounded-2xl border border-[#f0f0f0] bg-[#fafafa] p-6 shadow-sm">
+            <div className="pointer-events-none absolute inset-0">
+              <Image
+                src={currentImage}
+                alt="Professional plumbing work from The Drain Surgeon"
+                fill
+                sizes="(min-width: 1024px) 480px, 100vw"
+                className="object-cover opacity-40 transition-opacity duration-700"
+                priority
+              />
+            </div>
+            <div className="rounded-xl bg-primary-red px-5 py-3 text-center text-white shadow">
+              <p className="text-xs font-semibold tracking-[0.18em] uppercase">
+                Plumbers since 1979
+              </p>
+              <p className="mt-1 text-lg font-bold tracking-wide">
+                No job too deep, too dark or too dirty
+              </p>
+            </div>
+            <div className="mt-6 grid gap-5 sm:grid-cols-3">
+              <div className="flex flex-col items-center rounded-xl bg-white px-4 py-5 text-center shadow-sm">
+                <Droplet size={40} strokeWidth={1} className="text-primary-red" />
+                <h3 className="mt-3 text-xs font-semibold tracking-[0.18em] text-[#333333]">
+                  BLOCKED DRAIN
+                </h3>
+                <p className="mt-1 text-xs text-[#777777]">Specialist teams &amp; equipment.</p>
+              </div>
+              <div className="flex flex-col items-center rounded-xl bg-white px-4 py-5 text-center shadow-sm">
+                <IdCard size={40} strokeWidth={1} className="text-primary-red" />
+                <h3 className="mt-3 text-xs font-semibold tracking-[0.18em] text-[#333333]">
+                  SECURITY-CLEARED
+                </h3>
+                <p className="mt-1 text-xs text-[#777777]">Trusted professionals in your home.</p>
+              </div>
+              <div className="flex flex-col items-center rounded-xl bg-white px-4 py-5 text-center shadow-sm">
+                <Wrench size={40} strokeWidth={1} className="text-primary-red" />
+                <h3 className="mt-3 text-xs font-semibold tracking-[0.18em] text-[#333333]">
+                  EXPERIENCED
+                </h3>
+                <p className="mt-1 text-xs text-[#777777]">Decades of plumbing expertise.</p>
+              </div>
+            </div>
           </div>
         </div>
       </div>

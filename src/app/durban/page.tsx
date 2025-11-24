@@ -1,6 +1,10 @@
 import Header from "@/components/sections/header";
 import Footer from "@/components/sections/footer";
 import { MapPin, Clock, CheckCircle, Waves } from "lucide-react";
+import BranchImageSlider from "@/components/branch/BranchImageSlider";
+import DurbanImage from "@/assets/Durban.jpg";
+import PressureImage from "@/assets/pressure_new.webp";
+import SepticImage from "@/assets/septic_1.webp";
 
 export default function DurbanPage() {
   const areas = [
@@ -27,6 +31,26 @@ export default function DurbanPage() {
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
               Fast, reliable 24/7 plumbing services across Durban and the KZN North & South Coast
             </p>
+          </div>
+
+          {/* Image gallery */}
+          <div className="mb-10">
+            <BranchImageSlider
+              images={[
+                { src: DurbanImage, alt: "Durban beachfront and city" },
+                { src: PressureImage, alt: "High-pressure jetting equipment used in Durban" },
+                { src: SepticImage, alt: "Septic and drainage services equipment" },
+              ]}
+            >
+              <div className="relative z-10 max-w-xl mx-auto">
+                <h2 className="text-sm font-semibold uppercase tracking-[0.18em] text-white mb-2">
+                  Durban branch in action
+                </h2>
+                <p className="text-sm text-white/90">
+                  Real work scenes from Durban and the KZN North & South Coast.
+                </p>
+              </div>
+            </BranchImageSlider>
           </div>
 
           {/* Emergency CTA */}

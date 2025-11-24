@@ -8,7 +8,7 @@ import Footer from "@/components/sections/footer";
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-white page-fade">
       <Header />
       <main>
         <HeroBanner />

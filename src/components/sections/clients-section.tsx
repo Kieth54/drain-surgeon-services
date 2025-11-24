@@ -1,62 +1,73 @@
 import Image from "next/image";
 
+import McDonaldsLogo from "@/assets/mcdonalds-5.svg";
+import PPClogo from "@/assets/ppc.svg";
+import BidvestLogo from "@/assets/Bidvest Group Logo SVG.svg";
+import CosmopolitanLogo from "@/assets/cosmopolitan-magazine-logo.svg";
+import TrafalgarLogo from "@/assets/trafalgar-seeklogo.svg";
+import HuurkorLogo from "@/assets/huurkor.jpg";
+import CocaColaLogo from "@/assets/coca-cola-4.svg";
+import NestleLogo from "@/assets/nestle-4.svg";
+import WoolworthsLogo from "@/assets/woolworths-1.svg";
+import TransnetLogo from "@/assets/Transnet.svg";
+
 const clients = [
   {
-    src: "https://slelguoygbfzlpylpxfs.supabase.co/storage/v1/object/public/test-clones/7f88af8f-c7eb-4c50-add2-b202a0f23e6d-drainsurgeon-co-za/assets/images/mac1-119x75-28.jpg",
+    src: McDonaldsLogo,
     alt: "McDonald's logo",
     width: 119,
     height: 75,
   },
   {
-    src: "https://slelguoygbfzlpylpxfs.supabase.co/storage/v1/object/public/test-clones/7f88af8f-c7eb-4c50-add2-b202a0f23e6d-drainsurgeon-co-za/assets/images/ppc-150x63-29.jpg",
+    src: PPClogo,
     alt: "PPC Cement logo",
     width: 150,
     height: 63,
   },
   {
-    src: "https://slelguoygbfzlpylpxfs.supabase.co/storage/v1/object/public/test-clones/7f88af8f-c7eb-4c50-add2-b202a0f23e6d-drainsurgeon-co-za/assets/images/vest1-150x25-30.jpg",
+    src: BidvestLogo,
     alt: "Bidvest Bank logo",
     width: 150,
     height: 25,
   },
   {
-    src: "https://drainsurgeon.co.za/wp-content/uploads/2019/12/transnet_new-150x42.png",
+    src: TransnetLogo,
     alt: "Transnet logo",
     width: 150,
     height: 42,
   },
   {
-    src: "https://drainsurgeon.co.za/wp-content/uploads/2019/12/cosmopolitan-150x22.png",
+    src: CosmopolitanLogo,
     alt: "Cosmopolitan logo",
     width: 150,
     height: 22,
   },
   {
-    src: "https://drainsurgeon.co.za/wp-content/uploads/2019/12/trafalgar-150x34.png",
+    src: TrafalgarLogo,
     alt: "Trafalgar logo",
     width: 150,
     height: 34,
   },
   {
-    src: "https://drainsurgeon.co.za/wp-content/uploads/2019/12/huurkor-150x48.png",
+    src: HuurkorLogo,
     alt: "Huurkor logo",
     width: 150,
     height: 48,
   },
   {
-    src: "https://drainsurgeon.co.za/wp-content/uploads/2019/12/coke-150x49.png",
+    src: CocaColaLogo,
     alt: "Coca-Cola logo",
     width: 150,
     height: 49,
   },
   {
-    src: "https://drainsurgeon.co.za/wp-content/uploads/2019/12/nestle-150x39.png",
+    src: NestleLogo,
     alt: "Nestlé logo",
     width: 150,
     height: 39,
   },
   {
-    src: "https://drainsurgeon.co.za/wp-content/uploads/2019/12/woolworths-150x20.png",
+    src: WoolworthsLogo,
     alt: "Woolworths logo",
     width: 150,
     height: 20,
@@ -65,15 +76,21 @@ const clients = [
 
 const ClientsSection = () => {
   return (
-    <section className="bg-white">
+    <section className="bg-[#fafafa] py-12">
       <div className="container">
-        <div className="text-center pt-10">
-          <h3 className="text-primary font-bold text-3xl">Our Valued Clients</h3>
+        <div className="text-center">
+          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[#9f9f9f]">
+            Trusted by leading brands
+          </p>
+          <h3 className="mt-2 text-2xl font-bold text-black">Our Valued Clients</h3>
         </div>
-        <div className="mt-10">
-          <div className="flex flex-wrap justify-center items-center gap-x-14 gap-y-10">
+        <div className="mt-8">
+          <div className="flex flex-wrap justify-center items-center gap-x-10 gap-y-8">
             {clients.map((client) => (
-              <a key={client.alt} href="#" title={client.alt} className="flex items-center justify-center">
+              <div
+                key={client.alt}
+                className="flex items-center justify-center grayscale hover:grayscale-0 transition duration-200"
+              >
                 <Image
                   src={client.src}
                   alt={client.alt}
@@ -81,12 +98,9 @@ const ClientsSection = () => {
                   height={client.height}
                   className="max-w-full h-auto object-contain"
                 />
-              </a>
+              </div>
             ))}
           </div>
-        </div>
-        <div className="mt-12 mb-5">
-          <hr className="w-24 mx-auto border-t border-gray-200" />
         </div>
       </div>
     </section>

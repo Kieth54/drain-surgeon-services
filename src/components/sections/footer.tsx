@@ -22,23 +22,23 @@ const CookieBanner = () => {
     };
 
     return (
-        <div className="fixed bottom-4 left-4 z-50 w-full max-w-[350px] rounded-[5px] bg-white p-4 shadow-[0_2px_10px_rgba(0,0,0,0.2)]">
-            <div className="flex flex-col">
+        <div className="fixed bottom-4 left-4 z-50 w-full max-w-[360px] rounded-xl bg-white/95 p-4 shadow-[0_10px_30px_rgba(15,23,42,0.18)] backdrop-blur-sm">
+            <div className="flex flex-col gap-3">
                 <p className="text-[11px] leading-[18px] text-[#333333]">
                     We use cookies on our website to give you the most relevant experience by remembering your preferences and repeat visits. By clicking “Accept All”, you consent to the use of ALL the cookies. However, you may visit "
                     <a role="button" className="cursor-pointer font-bold text-black no-underline">Cookie Settings</a>
                     " to provide a controlled consent. View our {' '}
                     <Link href="/privacy-policy" target="_blank" rel="noopener noreferrer" className="font-bold text-black no-underline hover:underline">Privacy Policy</Link>
                 </p>
-                <div className="mt-4 flex flex-wrap items-center justify-start gap-2">
+                <div className="flex flex-wrap items-center justify-start gap-2">
                     <button
-                        className="rounded-[4px] bg-[#eeeeee] px-3 py-2 text-[12px] font-bold text-black"
+                        className="rounded-full border border-[#dddddd] bg-[#f5f5f5] px-3 py-2 text-[11px] font-semibold text-[#333333] transition hover:border-[#bbbbbb]"
                     >
                         Cookie Settings
                     </button>
                     <button
                         onClick={handleAccept}
-                        className="rounded-[4px] bg-[#00aa00] px-3 py-2 text-[12px] font-bold text-white"
+                        className="rounded-full bg-[#00aa00] px-3 py-2 text-[11px] font-semibold text-white shadow-sm transition hover:bg-[#008a00]"
                     >
                         Accept All
                     </button>
@@ -51,28 +51,57 @@ const CookieBanner = () => {
 const Footer = () => {
     return (
         <>
-            <footer id="Footer" className="relative clear-both bg-primary-red">
-                <div className="py-10">
-                    <div className="container text-center">
-                        <div className="inline-block">
-                            <Image
-                                src="https://drainsurgeon.co.za/wp-content/uploads/2019/12/logo-footer.png"
-                                alt="The Drain Surgeon Logo"
-                                width={58}
-                                height={59}
-                            />
+            <footer id="Footer" className="relative clear-both bg-primary-red text-white">
+                <div className="border-t border-t-[rgba(255,255,255,0.2)]">
+                    <div className="container py-8">
+                        <div className="grid gap-6 text-xs md:grid-cols-3 md:text-left text-center">
+                            <div className="space-y-1.5">
+                                <p className="font-semibold tracking-[0.18em] uppercase text-white/80">
+                                    24/7 Emergency Call
+                                </p>
+                                <a
+                                    href="tel:+27861758623"
+                                    className="inline-flex items-center justify-center rounded-full bg-white text-primary-red px-4 py-2 text-[12px] font-bold shadow-sm hover:bg-yellow-50"
+                                >
+                                    +27 861 758 623
+                                </a>
+                            </div>
+                            <div className="space-y-1.5">
+                                <p className="font-semibold tracking-[0.18em] uppercase text-white/80">
+                                    Contact &amp; Email
+                                </p>
+                                <p className="text-white/85">
+                                    <a href="mailto:info@drainsurgeon.co.za" className="hover:underline">
+                                        info@drainsurgeon.co.za
+                                    </a>
+                                </p>
+                                <p className="text-white/75 text-[11px]">
+                                    Nationwide branches across South Africa.
+                                </p>
+                            </div>
+                            <div className="space-y-1.5">
+                                <p className="font-semibold tracking-[0.18em] uppercase text-white/80">
+                                    Service Hours
+                                </p>
+                                <p className="text-white/85 text-[12px]">
+                                    24 hours a day, 7 days a week
+                                </p>
+                                <p className="text-white/75 text-[11px]">
+                                    Residential, commercial and industrial plumbing.
+                                </p>
+                            </div>
                         </div>
                     </div>
                 </div>
-                <div className="border-t border-t-[rgba(255,255,255,0.1)]">
-                    <div className="container py-5">
-                      <div className="text-center text-sm leading-[25px] text-white">
-                          Plan Two Plumbing Services (PTY) LTD 2023 | All Rights Reserved |{' '}
-                          <Link href="/privacy-policy" className="text-white hover:underline">
+                <div className="border-t border-t-[rgba(255,255,255,0.18)]">
+                    <div className="container py-4">
+                      <div className="text-center text-[12px] leading-[22px] text-white/80">
+                          Plan Two Plumbing Services (PTY) LTD 2023 &copy; All Rights Reserved |{' '}
+                          <Link href="/privacy-policy" className="font-medium text-white hover:underline">
                               View Our Privacy Policy
                           </Link>
                           {' '} | Developed by {' '}
-                          <a href="http://networds.co.za" target="_blank" rel="noopener noreferrer" className="text-white hover:underline">
+                          <a href="http://networds.co.za" target="_blank" rel="noopener noreferrer" className="font-medium text-white hover:underline">
                               Networds
                           </a>
                       </div>
@@ -81,7 +110,7 @@ const Footer = () => {
             </footer>
             <a
                 href="https://api.whatsapp.com/send?phone=27764213233&text=I'm%20interested%20in%20your%20services"
-                className="fixed bottom-10 right-10 z-40 flex h-[60px] w-[60px] items-center justify-center rounded-full bg-[#25d366] text-white shadow-[2px_2px_3px_rgba(0,0,0,0.4)]"
+                className="fixed bottom-8 right-8 z-40 flex h-[56px] w-[56px] items-center justify-center rounded-full bg-[#25d366] text-white shadow-[0_12px_30px_rgba(15,23,42,0.35)] transition hover:scale-[1.03] hover:bg-[#1ebe5d]"
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Chat on WhatsApp"

@@ -1,6 +1,13 @@
 import Header from "@/components/sections/header";
 import Footer from "@/components/sections/footer";
 import { MapPin, Clock, CheckCircle, Waves } from "lucide-react";
+import BranchImageSlider from "@/components/branch/BranchImageSlider";
+import CapeTownImage from "@/assets/Cape Town.jpg";
+import PlumbImage from "@/assets/plumb_1.webp";
+import CameraImage from "@/assets/camera_nrew-1.webp";
+import HomePlumberImage from "@/assets/home-plumber-on-th-job.webp";
+import GuysImage from "@/assets/guys-1.webp";
+import BurstPipesImage from "@/assets/burst_pipes_new.webp";
 
 export default function CapeTownPage() {
   const areas = [
@@ -28,6 +35,29 @@ export default function CapeTownPage() {
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
               24/7 emergency plumbing services across the Mother City and surrounds
             </p>
+          </div>
+
+          {/* Image gallery */}
+          <div className="mb-10">
+            <BranchImageSlider
+              images={[
+                { src: CapeTownImage, alt: "Cape Town city and Table Mountain" },
+                { src: PlumbImage, alt: "The Drain Surgeon plumbing team on site" },
+                { src: CameraImage, alt: "CCTV drain inspection equipment in use" },
+                { src: HomePlumberImage, alt: "Plumber from The Drain Surgeon working on site" },
+                { src: GuysImage, alt: "Drain Surgeon team members" },
+                { src: BurstPipesImage, alt: "Repairing burst pipes in Cape Town" },
+              ]}
+            >
+              <div className="relative z-10 max-w-xl mx-auto">
+                <h2 className="text-sm font-semibold uppercase tracking-[0.18em] text-white mb-2">
+                  Cape Town branch in action
+                </h2>
+                <p className="text-sm text-white/90">
+                  Scenes from our Cape Town operations, from coastal properties to busy CBD sites.
+                </p>
+              </div>
+            </BranchImageSlider>
           </div>
 
           {/* Emergency CTA */}

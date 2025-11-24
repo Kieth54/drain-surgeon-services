@@ -1,6 +1,10 @@
 import Header from "@/components/sections/header";
 import Footer from "@/components/sections/footer";
 import { MapPin, Clock, Wrench, CheckCircle } from "lucide-react";
+import BranchImageSlider from "@/components/branch/BranchImageSlider";
+import JohannesburgImage from "@/assets/Johannesburg.jpg";
+import VanImage from "@/assets/van-2.webp";
+import OnJobImage from "@/assets/home-plumber-on-th-job.webp";
 
 export default function JohannesburgPage() {
   const suburbs = [
@@ -26,6 +30,26 @@ export default function JohannesburgPage() {
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
               Fast, reliable 24/7 plumbing services across all Johannesburg suburbs
             </p>
+          </div>
+
+          {/* Image gallery */}
+          <div className="mb-10">
+            <BranchImageSlider
+              images={[
+                { src: JohannesburgImage, alt: "Johannesburg city skyline" },
+                { src: VanImage, alt: "The Drain Surgeon van serving Johannesburg" },
+                { src: OnJobImage, alt: "Plumber from The Drain Surgeon working on site" },
+              ]}
+            >
+              <div className="relative z-10 max-w-xl mx-auto">
+                <h2 className="text-sm font-semibold uppercase tracking-[0.18em] text-white mb-2">
+                  Johannesburg branch in action
+                </h2>
+                <p className="text-sm text-white/90">
+                  A glimpse of our teams, vehicles and the city we serve every day across Johannesburg.
+                </p>
+              </div>
+            </BranchImageSlider>
           </div>
 
           {/* Emergency CTA */}

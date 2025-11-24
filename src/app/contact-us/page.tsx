@@ -1,10 +1,14 @@
 import Header from "@/components/sections/header";
 import Footer from "@/components/sections/footer";
+import Image from "next/image";
+import FindPlumberImage from "@/assets/blog/HOW TO FIND A PLUMBER NEAR YOU.webp";
+import PlumbImage from "@/assets/plumb_1.webp";
+import CameraImage from "@/assets/camera_nrew-1.webp";
 import { Phone, Mail, MapPin, Clock } from "lucide-react";
 
 export default function ContactPage() {
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-[radial-gradient(circle_at_top,_#f3f4f6,_#ffffff)] page-fade">
       <Header />
       <main className="py-12">
         <div className="container">
@@ -22,8 +26,14 @@ export default function ContactPage() {
               
               <div className="space-y-6">
                 {/* Emergency Contact */}
-                <div className="bg-[var(--color-primary-red)] text-white p-6 rounded-lg">
-                  <div className="flex items-start gap-4">
+                <div className="relative overflow-hidden rounded-2xl bg-[var(--color-primary-red)] text-white p-6 shadow-md">
+                  <Image
+                    src={PlumbImage}
+                    alt="Drain Surgeon plumber on site"
+                    fill
+                    className="absolute inset-0 h-full w-full object-cover opacity-25"
+                  />
+                  <div className="relative flex items-start gap-4">
                     <Phone className="w-6 h-6 mt-1 flex-shrink-0" />
                     <div>
                       <h3 className="font-bold text-lg mb-2">24/7 Emergency Line</h3>
@@ -72,8 +82,14 @@ export default function ContactPage() {
                 </div>
 
                 {/* Service Areas */}
-                <div className="border-2 border-gray-200 p-6 rounded-lg">
-                  <div className="flex items-start gap-4">
+                <div className="relative overflow-hidden rounded-2xl border-2 border-gray-200 p-6 shadow-sm">
+                  <Image
+                    src={CameraImage}
+                    alt="Drain inspection and service coverage"
+                    fill
+                    className="absolute inset-0 h-full w-full object-cover opacity-15"
+                  />
+                  <div className="relative flex items-start gap-4">
                     <MapPin className="w-6 h-6 mt-1 text-[var(--color-primary-red)] flex-shrink-0" />
                     <div>
                       <h3 className="font-bold text-lg mb-2 text-black">Service Areas</h3>
@@ -179,11 +195,15 @@ export default function ContactPage() {
 
           {/* Map Section */}
           <div className="mt-16">
-            <h2 className="text-2xl font-bold text-center mb-6 text-black">
-              Our Service Coverage
-            </h2>
-            <div className="bg-gray-200 rounded-lg h-96 flex items-center justify-center">
-              <p className="text-gray-600 text-lg">Map showing service areas</p>
+            <div className="bg-gray-200 rounded-lg h-96 flex items-center justify-center overflow-hidden">
+              <div className="relative w-full h-full max-w-3xl">
+                <Image
+                  src={FindPlumberImage}
+                  alt="Map showing Drain Surgeon service areas"
+                  fill
+                  className="object-contain object-center"
+                />
+              </div>
             </div>
           </div>
         </div>

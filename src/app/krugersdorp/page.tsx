@@ -1,6 +1,10 @@
 import Header from "@/components/sections/header";
 import Footer from "@/components/sections/footer";
 import { MapPin, Clock, CheckCircle, Phone } from "lucide-react";
+import BranchImageSlider from "@/components/branch/BranchImageSlider";
+import KrugersdorpImage from "@/assets/Rustenburg (1).jpg";
+import VanImage from "@/assets/van-2.webp";
+import FixImage from "@/assets/fix.webp";
 
 export default function KrugersdorpPage() {
   const areas = [
@@ -34,6 +38,26 @@ export default function KrugersdorpPage() {
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
               Professional 24/7 plumbing services for Krugersdorp and the West Rand
             </p>
+          </div>
+
+          {/* Image gallery */}
+          <div className="mb-10">
+            <BranchImageSlider
+              images={[
+                { src: KrugersdorpImage, alt: "Krugersdorp and West Rand area" },
+                { src: VanImage, alt: "The Drain Surgeon van in the West Rand" },
+                { src: FixImage, alt: "Plumbing repairs and maintenance work" },
+              ]}
+            >
+              <div className="relative z-10 max-w-xl mx-auto">
+                <h2 className="text-sm font-semibold uppercase tracking-[0.18em] text-white mb-2">
+                  Krugersdorp & West Rand in pictures
+                </h2>
+                <p className="text-sm text-white/90">
+                  Visuals from our work across Krugersdorp and the wider West Rand region.
+                </p>
+              </div>
+            </BranchImageSlider>
           </div>
 
           {/* Emergency CTA */}

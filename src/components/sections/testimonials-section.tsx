@@ -1,6 +1,8 @@
 "use client";
 
-import { Star, ChevronLeft, ChevronRight } from "lucide-react";
+import { useState } from "react";
+import { Star } from "lucide-react";
+import { useOptimizedTimer } from "@/hooks/useOptimizedTimer";
 
 type Testimonial = {
   quote?: string;
@@ -14,54 +16,101 @@ type Testimonial = {
 const testimonialsData: Testimonial[] = [
   {
     quote:
-      "Besides being the best plumbing company, Drain Surgeon is one of the best companies I’ve ever dealt with - all round Professional , excellent service and so pleasant to...",
-    readMoreUrl: "#",
-    name: "R-zE KATZ",
-    nameUrl: "#",
+      "Fast efficient and professional service. Solved a difficult problem and returned promptly to fix a second issue within 5 days. Highly recommended for all difficult drain and plumbing problems!",
+    name: "Cyril Harrisberg",
+    date: "2022-05-25",
+    rating: 5,
+  },
+  {
+    quote:
+      "Besides being the best plumbing company, Drain Surgeon is one of the best companies I’ve ever dealt with – all round professional, excellent service and so pleasant to deal with. What’s more, their call out rate is the same 7 days per week.",
+    name: "Raze Katz",
     date: "2022-02-25",
     rating: 5,
   },
-  {},
-  {},
-  {},
-  {},
-  {},
-  {},
+  {
+    quote: "They were on time and did a good job.",
+    name: "Bettie Strauss",
+    date: "2020-08-25",
+    rating: 5,
+  },
+  {
+    quote:
+      "I appreciated the call from the head office regarding my complaint. Kathy was very fast to contact me. For that reason I am giving them 5 stars.",
+    name: "Adam Thabet",
+    date: "2019-08-25",
+    rating: 5,
+  },
+  {
+    quote: "On time and of good help.",
+    name: "Lee-anne Booys",
+    date: "2021-08-25",
+    rating: 5,
+  },
+  {
+    quote:
+      "David and Jean were both professional and thorough when clearing and solving a blocked sewerage pipe. They arrived on time and it was a pleasure dealing with them both.",
+    name: "Dyan Belonje",
+    date: "2020-08-25",
+    rating: 5,
+  },
+  {
+    quote: "Friendly staff, quick solutions and reasonably priced. Highly recommended!",
+    name: "Chavonne Snyman",
+    date: "2019-08-25",
+    rating: 5,
+  },
 ];
 
 const TestimonialsSection = () => {
-  const activeIndex = 0;
-  const currentTestimonial = testimonialsData[activeIndex];
+  const [activeIndex, setActiveIndex] = useState(0);
+
+  const validTestimonials = testimonialsData.filter((t) => t.quote);
+
+  // Always show up to 7 cards in the loop
+  const displayTestimonials: Testimonial[] = validTestimonials.length
+    ? Array.from({ length: 7 }, (_, i) => validTestimonials[i % validTestimonials.length])
+    : [];
+
+  // Use optimized timer for testimonials rotation
+  useOptimizedTimer(
+    'testimonials-rotation',
+    5000,
+    () => {
+      if (displayTestimonials.length > 0) {
+        setActiveIndex((prev) => (prev + 1) % displayTestimonials.length);
+      }
+    },
+    displayTestimonials.length > 0
+  );
 
   return (
     <section className="bg-light-gray pt-[60px] pb-10">
       <div className="container mx-auto px-10">
-        <h3 className="text-center text-2xl font-bold text-[#626262] mb-12">
-          Read our client feedback:
+        <h3 className="text-center text-2xl font-bold text-[#626262] mb-3">
+          Read our client feedback
         </h3>
+        <p className="text-center text-sm text-dark-gray mb-10 max-w-xl mx-auto">
+          Real reviews from homeowners and businesses who trust The Drain Surgeon with their plumbing emergencies.
+        </p>
 
-        <div className="relative max-w-3xl mx-auto">
-          <div className="relative flex items-center justify-center">
-            <button className="hidden md:block absolute left-[-60px] top-1/2 -translate-y-1/2 text-[#bebebe] hover:text-dark-gray transition-colors">
-              <ChevronLeft size={36} />
-            </button>
-
-            {currentTestimonial.quote && (
-              <div className="bg-white shadow-[0_2px_8px_rgba(0,0,0,0.1)] w-full text-center py-10 px-12 relative">
-                <span className="font-serif text-7xl text-gray-200/80 absolute top-4 left-6 z-0">
-                  “
-                </span>
-                <span className="font-serif text-7xl text-gray-200/80 absolute top-4 right-6 z-0">
-                  ”
-                </span>
-
-                <div className="relative z-10">
-                  <div className="flex justify-center mb-5">
+        {displayTestimonials.length > 0 && (
+          <div className="relative mx-auto max-w-5xl overflow-hidden">
+            <div
+              className="flex gap-4 transition-transform duration-700 ease-out"
+              style={{ transform: `translateX(-${activeIndex * (100 / displayTestimonials.length)}%)` }}
+            >
+              {displayTestimonials.map((testimonial, index) => (
+                <div
+                  key={index}
+                  className="min-w-[220px] max-w-[260px] flex-[0_0_auto] rounded-2xl bg-white px-4 py-5 shadow-[0_10px_35px_rgba(15,23,42,0.16)]"
+                >
+                  <div className="flex justify-center mb-2">
                     {[...Array(5)].map((_, i) => (
                       <Star
                         key={i}
-                        className={`w-6 h-6 ${
-                          currentTestimonial.rating && i < currentTestimonial.rating
+                        className={`h-3 w-3 ${
+                          testimonial.rating && i < testimonial.rating
                             ? "text-yellow-gold fill-yellow-gold"
                             : "text-gray-300"
                         }`}
@@ -69,64 +118,22 @@ const TestimonialsSection = () => {
                       />
                     ))}
                   </div>
-
-                  <blockquote className="text-dark-gray italic text-lg leading-relaxed mb-5">
-                    {currentTestimonial.quote}
-                    <a
-                      href={currentTestimonial.readMoreUrl}
-                      className="text-primary-red hover:underline ml-1"
-                    >
-                      read more
-                    </a>
-                  </blockquote>
-
-                  <div className="flex justify-center items-center my-6 space-x-1.5">
-                    <span className="w-1.5 h-1.5 bg-gray-300 rounded-full"></span>
-                    <span className="w-1.5 h-1.5 bg-gray-300 rounded-full"></span>
-                    <span className="w-1.5 h-1.5 bg-gray-300 rounded-full"></span>
+                  <p className="text-[12px] leading-relaxed text-dark-gray italic line-clamp-4">
+                    {testimonial.quote}
+                  </p>
+                  <div className="mt-3 text-xs font-semibold text-black">
+                    {testimonial.name}
                   </div>
-
-                  <div className="flex flex-col items-center">
-                    <div className="w-[90px] h-[90px] rounded-full bg-gray-200 mb-4 overflow-hidden">
-                      {/* Placeholder for reviewer's avatar image */}
+                  {testimonial.date && (
+                    <div className="text-[11px] text-gray-400 mt-0.5">
+                      {testimonial.date}
                     </div>
-                    <h5 className="font-bold text-black text-base">
-                      <a
-                        href={currentTestimonial.nameUrl}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="text-black hover:text-primary-red transition-colors"
-                      >
-                        {currentTestimonial.name}
-                      </a>
-                    </h5>
-                    <p className="text-sm text-dark-gray mt-1">
-                      {currentTestimonial.date}
-                    </p>
-                  </div>
+                  )}
                 </div>
-              </div>
-            )}
-
-            <button className="hidden md:block absolute right-[-60px] top-1/2 -translate-y-1/2 text-[#bebebe] hover:text-dark-gray transition-colors">
-              <ChevronRight size={36} />
-            </button>
+              ))}
+            </div>
           </div>
-
-          <div className="flex justify-center mt-8 space-x-2">
-            {testimonialsData.map((_, index) => (
-              <button
-                key={index}
-                className={`w-3 h-3 rounded-full transition-colors ${
-                  index === activeIndex
-                    ? "bg-gray-600"
-                    : "border border-gray-400 hover:bg-gray-300"
-                }`}
-                aria-label={`Go to slide ${index + 1}`}
-              />
-            ))}
-          </div>
-        </div>
+        )}
       </div>
     </section>
   );
