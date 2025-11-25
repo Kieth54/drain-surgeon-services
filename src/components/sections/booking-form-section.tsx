@@ -40,7 +40,6 @@ import BlogPipesWornOutImage from "@/assets/blog/HOW TO TELL IF YOUR PIPES ARE W
 import BlogUnblockSoilPipesImage from "@/assets/blog/HOW TO UNBLOCK SOIL PIPES.webp";
 import BlogDrainTipTopImage from "@/assets/blog/How To Keep Your Drain In Tip-Top Condition.webp";
 import BlogUnblockToiletGuideImage from "@/assets/blog/How to Unblock a Toilet – The Ultimate Guide.webp";
-import BlogPreventLeaksHomeImage from "@/assets/blog/PREVENT LEAKS IN YOUR HOME! HERE’S HOW.webp";
 import BlogPreventLeaksImage from "@/assets/blog/PREVENT LEAKS.webp";
 import BlogRisksBusinessImage from "@/assets/blog/Plumbing Risks In Your Business.webp";
 import BlogPlumbingTipsUnblockToiletImage from "@/assets/blog/Plumbing Tips – How To Unblock Your Toilet.webp";
@@ -110,7 +109,6 @@ const galleryImages = [
   BlogUnblockSoilPipesImage,
   BlogDrainTipTopImage,
   BlogUnblockToiletGuideImage,
-  BlogPreventLeaksHomeImage,
   BlogPreventLeaksImage,
   BlogRisksBusinessImage,
   BlogPlumbingTipsUnblockToiletImage,
