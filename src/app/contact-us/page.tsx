@@ -107,7 +107,7 @@ export default function ContactPage() {
             {/* Contact Form */}
             <div>
               <h2 className="text-2xl font-bold mb-6 text-black">Send Us a Message</h2>
-              <form className="space-y-4">
+              <form className="space-y-5 rounded-2xl bg-white/90 p-6 shadow-[0_18px_60px_rgba(15,23,42,0.08)] border border-gray-100">
                 <div className="grid md:grid-cols-2 gap-4">
                   <div>
                     <label className="block text-sm font-bold mb-2 text-black">
@@ -116,7 +116,7 @@ export default function ContactPage() {
                     <input
                       type="text"
                       required
-                      className="w-full px-4 py-3 border-2 border-gray-300 rounded focus:border-[var(--color-primary-red)] outline-none"
+                      className="w-full rounded-xl border border-gray-300 bg-white px-4 py-3 text-sm text-gray-800 shadow-sm outline-none transition focus:border-[var(--color-primary-red)] focus:ring-2 focus:ring-[var(--color-primary-red)]/15"
                     />
                   </div>
                   <div>
@@ -126,7 +126,7 @@ export default function ContactPage() {
                     <input
                       type="text"
                       required
-                      className="w-full px-4 py-3 border-2 border-gray-300 rounded focus:border-[var(--color-primary-red)] outline-none"
+                      className="w-full rounded-xl border border-gray-300 bg-white px-4 py-3 text-sm text-gray-800 shadow-sm outline-none transition focus:border-[var(--color-primary-red)] focus:ring-2 focus:ring-[var(--color-primary-red)]/15"
                     />
                   </div>
                 </div>
@@ -138,7 +138,7 @@ export default function ContactPage() {
                   <input
                     type="email"
                     required
-                    className="w-full px-4 py-3 border-2 border-gray-300 rounded focus:border-[var(--color-primary-red)] outline-none"
+                    className="w-full rounded-xl border border-gray-300 bg-white px-4 py-3 text-sm text-gray-800 shadow-sm outline-none transition focus:border-[var(--color-primary-red)] focus:ring-2 focus:ring-[var(--color-primary-red)]/15"
                   />
                 </div>
 
@@ -149,7 +149,7 @@ export default function ContactPage() {
                   <input
                     type="tel"
                     required
-                    className="w-full px-4 py-3 border-2 border-gray-300 rounded focus:border-[var(--color-primary-red)] outline-none"
+                    className="w-full rounded-xl border border-gray-300 bg-white px-4 py-3 text-sm text-gray-800 shadow-sm outline-none transition focus:border-[var(--color-primary-red)] focus:ring-2 focus:ring-[var(--color-primary-red)]/15"
                   />
                 </div>
 
@@ -157,7 +157,7 @@ export default function ContactPage() {
                   <label className="block text-sm font-bold mb-2 text-black">
                     Service Area
                   </label>
-                  <select className="w-full px-4 py-3 border-2 border-gray-300 rounded focus:border-[var(--color-primary-red)] outline-none">
+                  <select className="w-full rounded-xl border border-gray-300 bg-white px-4 py-3 text-sm text-gray-800 shadow-sm outline-none transition focus:border-[var(--color-primary-red)] focus:ring-2 focus:ring-[var(--color-primary-red)]/15">
                     <option value="">Select your area</option>
                     <option value="johannesburg">Johannesburg</option>
                     <option value="krugersdorp">Krugersdorp</option>
@@ -174,14 +174,14 @@ export default function ContactPage() {
                   <textarea
                     required
                     rows={5}
-                    className="w-full px-4 py-3 border-2 border-gray-300 rounded focus:border-[var(--color-primary-red)] outline-none resize-none"
+                    className="w-full rounded-xl border border-gray-300 bg-white px-4 py-3 text-sm text-gray-800 shadow-sm outline-none transition focus:border-[var(--color-primary-red)] focus:ring-2 focus:ring-[var(--color-primary-red)]/15 resize-none"
                     placeholder="Tell us about your plumbing needs..."
                   ></textarea>
                 </div>
 
                 <button
                   type="submit"
-                  className="w-full bg-[var(--color-primary-red)] text-white font-bold py-4 rounded hover:bg-[var(--color-deep-red)] transition-colors"
+                  className="w-full rounded-full bg-[var(--color-primary-red)] py-4 text-sm font-bold uppercase tracking-[0.16em] text-white shadow-md transition hover:bg-[var(--color-deep-red)] hover:shadow-[0_16px_40px_rgba(15,23,42,0.25)]"
                 >
                   Send Message
                 </button>

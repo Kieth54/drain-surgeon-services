@@ -4,6 +4,7 @@ import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { Menu, X } from "lucide-react";
+import Logo from "@/assets/logo.png";
 
 const navItems = [
   { name: "Home", href: "/" },
@@ -26,7 +27,7 @@ const Header = () => {
 
   return (
     <header
-      className="relative z-20 bg-transparent font-primary"
+      className="sticky top-0 z-30 bg-transparent font-primary"
       style={{ fontFamily: "Arial, Helvetica, sans-serif" }}
     >
       <div className="container mx-auto px-4 sm:px-6 lg:px-10">
@@ -35,7 +36,7 @@ const Header = () => {
             <Link href="/" className="flex items-center gap-2 sm:gap-3">
               <div className="relative h-[30px] w-[100px] sm:h-[36px] sm:w-[130px]">
                 <Image
-                  src="https://slelguoygbfzlpylpxfs.supabase.co/storage/v1/object/public/test-clones/7f88af8f-c7eb-4c50-add2-b202a0f23e6d-drainsurgeon-co-za/assets/images/logo_drain-1.jpg"
+                  src={Logo}
                   alt="THE DRAIN SURGEON - No job too deep, too dark, or too dirty"
                   fill
                   sizes="(max-width: 640px) 160px, 220px"
@@ -44,16 +45,23 @@ const Header = () => {
                 />
               </div>
             </Link>
-
-            <button
-              type="button"
-              onClick={() => setIsOpen(true)}
-              className="inline-flex items-center justify-center rounded-full border border-[#dddddd] bg-white px-3 py-1.5 text-xs sm:text-sm font-semibold text-primary-red shadow-sm transition hover:border-primary-red/70 hover:text-primary-red"
-              aria-label="Open navigation menu"
-            >
-              <Menu size={18} className="mr-1.5" />
-              <span className="hidden sm:inline">Menu</span>
-            </button>
+            <div className="flex items-center gap-2 sm:gap-3">
+              <a
+                href="tel:+27861758623"
+                className="hidden sm:inline-flex items-center justify-center rounded-full bg-primary-red px-4 py-1.5 text-xs sm:text-sm font-semibold text-white shadow-md transition hover:bg-[#b30000]"
+              >
+                Call Now
+              </a>
+              <button
+                type="button"
+                onClick={() => setIsOpen(true)}
+                className="inline-flex items-center justify-center rounded-full border border-[#dddddd] bg-white px-3 py-1.5 text-xs sm:text-sm font-semibold text-primary-red shadow-sm transition hover:border-primary-red/70 hover:text-primary-red"
+                aria-label="Open navigation menu"
+              >
+                <Menu size={18} className="mr-1.5" />
+                <span className="hidden sm:inline">Menu</span>
+              </button>
+            </div>
           </div>
         </div>
       </div>
@@ -67,7 +75,7 @@ const Header = () => {
             onClick={() => setIsOpen(false)}
           />
 
-          <aside className="fixed right-0 top-0 z-40 flex h-full w-[280px] flex-col bg-white shadow-[0_20px_60px_rgba(15,23,42,0.45)]">
+          <aside className="fixed left-0 top-0 z-40 flex h-full w-[280px] flex-col bg-white shadow-[0_20px_60px_rgba(15,23,42,0.45)] rounded-r-2xl overflow-hidden">
             <div className="flex items-center justify-between border-b border-[#f0f0f0] px-5 py-4">
               <span className="text-sm font-semibold tracking-wide text-[#333333]">
                 Navigation

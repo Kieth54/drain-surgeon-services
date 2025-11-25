@@ -53,46 +53,65 @@ const Footer = () => {
         <>
             <footer id="Footer" className="relative clear-both bg-primary-red text-white">
                 <div className="border-t border-t-[rgba(255,255,255,0.2)]">
-                    <div className="container py-8">
-                        <div className="grid gap-6 text-xs md:grid-cols-3 md:text-left text-center">
-                            <div className="space-y-1.5">
-                                <p className="font-semibold tracking-[0.18em] uppercase text-white/80">
-                                    24/7 Emergency Call
+                    <div className="container py-10">
+                        <div className="grid gap-8 text-xs md:grid-cols-3 lg:grid-cols-[1.4fr_1fr_1fr] md:text-left text-center">
+                            <div className="space-y-3 flex flex-col items-center md:items-start">
+                                <p className="font-semibold tracking-[0.18em] uppercase text-white/70 text-[11px]">
+                                    24/7 Emergency Plumbing &amp; Drains
+                                </p>
+                                <p className="text-white/90 text-[12px] max-w-xs">
+                                    The Drain Surgeon provides nationwide, security-cleared plumbing teams on call
+                                    day and night for homes, businesses and industrial sites.
                                 </p>
                                 <a
                                     href="tel:+27861758623"
-                                    className="inline-flex items-center justify-center rounded-full bg-white text-primary-red px-4 py-2 text-[12px] font-bold shadow-sm hover:bg-yellow-50"
+                                    className="inline-flex items-center justify-center rounded-full bg-white text-primary-red px-4 py-2 mt-2 text-[12px] font-bold shadow-sm hover:bg-yellow-50"
                                 >
-                                    +27 861 758 623
+                                    Call 24/7: +27 861 758 623
                                 </a>
                             </div>
-                            <div className="space-y-1.5">
-                                <p className="font-semibold tracking-[0.18em] uppercase text-white/80">
-                                    Contact &amp; Email
+                            <div className="space-y-3">
+                                <p className="font-semibold tracking-[0.18em] uppercase text-white/80 text-[11px]">
+                                    Quick Links
                                 </p>
-                                <p className="text-white/85">
-                                    <a href="mailto:info@drainsurgeon.co.za" className="hover:underline">
-                                        info@drainsurgeon.co.za
-                                    </a>
-                                </p>
-                                <p className="text-white/75 text-[11px]">
-                                    Nationwide branches across South Africa.
-                                </p>
+                                <div className="flex flex-col gap-1 text-[12px] text-white/85">
+                                    <Link href="/services" className="hover:underline">
+                                        Services
+                                    </Link>
+                                    <Link href="/find-branch" className="hover:underline">
+                                        Find Your Branch
+                                    </Link>
+                                    <Link href="/download-app" className="hover:underline">
+                                        Download App
+                                    </Link>
+                                    <Link href="/franchise" className="hover:underline">
+                                        Franchise
+                                    </Link>
+                                    <Link href="/contact-us" className="hover:underline">
+                                        Contact Us
+                                    </Link>
+                                </div>
                             </div>
-                            <div className="space-y-1.5">
-                                <p className="font-semibold tracking-[0.18em] uppercase text-white/80">
-                                    Service Hours
+                            <div className="space-y-3">
+                                <p className="font-semibold tracking-[0.18em] uppercase text-white/80 text-[11px]">
+                                    Contact &amp; Hours
                                 </p>
-                                <p className="text-white/85 text-[12px]">
-                                    24 hours a day, 7 days a week
-                                </p>
-                                <p className="text-white/75 text-[11px]">
-                                    Residential, commercial and industrial plumbing.
-                                </p>
+                                <div className="space-y-1 text-[12px] text-white/85">
+                                    <p>
+                                        <a href="mailto:info@drainsurgeon.co.za" className="hover:underline">
+                                            info@drainsurgeon.co.za
+                                        </a>
+                                    </p>
+                                    <p className="text-white/80">24 hours a day, 7 days a week</p>
+                                    <p className="text-white/65 text-[11px]">
+                                        Residential, commercial and industrial plumbing across South Africa.
+                                    </p>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
+
                 <div className="border-t border-t-[rgba(255,255,255,0.18)]">
                     <div className="container py-4">
                       <div className="text-center text-[12px] leading-[22px] text-white/80">

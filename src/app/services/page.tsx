@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { AlertTriangle, Droplets, Flame, ScanLine, Shield, Wrench } from "lucide-react";
 
 import Header from "@/components/sections/header";
 import Footer from "@/components/sections/footer";
@@ -10,32 +11,39 @@ export default function ServicesPage() {
       title: "General 24HR Plumbing",
       description:
         "Emergency plumbing services available 24/7 for leaks, blockages and urgent repairs.",
+      icon: AlertTriangle,
     },
     {
       title: "Geyser Repairs & Replacements",
       description: "Expert geyser installation, repair and insurance-related replacements.",
+      icon: Flame,
     },
     {
       title: "Blocked Drains",
       description:
         "Electro-mechanical drain cleaning and high-pressure hydro jetting of sewer and storm water drains.",
+      icon: Droplets,
     },
     {
       title: "Electronic Leak Detection",
       description: "State-of-the-art leak detection technology to find hidden leaks quickly.",
+      icon: ScanLine,
     },
     {
       title: "Burst and Leaking Pipes",
       description: "Fast response to burst and leaking pipes to minimise water damage.",
+      icon: Wrench,
     },
     {
       title: "CCTV Camera Drain Inspections",
       description:
         "Video-camera inspection to diagnose underground pipe problems like cracks, roots and sinkage.",
+      icon: Shield,
     },
     {
       title: "Septic Tanks & French Drains",
       description: "Installation and maintenance of septic tanks and French drains.",
+      icon: Shield,
     },
   ];
 
@@ -51,8 +59,8 @@ export default function ServicesPage() {
                   Services
                 </p>
                 <h1 className="mt-3 text-3xl font-bold leading-tight text-black sm:text-[34px] lg:text-[38px]">
-                  General 24-Hour Emergency
-                  <span className="text-primary-red"> Plumbing Services</span>
+                  24-Hour Emergency
+                  <span className="text-primary-red"> Plumbing &amp; Drain Services</span>
                 </h1>
                 <p className="mt-4 text-sm leading-relaxed text-[#666666] max-w-xl">
                   If you need something fixed or fitted, our teams are on call day and night. We offer
@@ -105,7 +113,7 @@ export default function ServicesPage() {
           </div>
         </section>
 
-        <section className="mt-16 bg-light-gray/60 py-10">
+        <section className="mt-16 bg-light-gray/60 py-12">
           <div className="container max-w-5xl">
             <div className="grid gap-6 md:grid-cols-3">
               <div className="rounded-2xl bg-white p-6 shadow-sm border border-[#eeeeee]">
@@ -144,10 +152,10 @@ export default function ServicesPage() {
           </div>
         </section>
 
-        <section className="mt-16">
+        <section className="mt-16 mb-6">
           <div className="container max-w-5xl">
-            <h2 className="text-xl font-bold text-black mb-3">Services we specialise in</h2>
-            <p className="text-sm text-[#555555] mb-6 max-w-2xl">
+            <h2 className="text-2xl sm:text-[26px] font-bold text-black mb-3">Services we specialise in</h2>
+            <p className="text-sm sm:text-[15px] text-[#555555] mb-8 max-w-2xl">
               Below are some of the core plumbing and drainage services we offer to homes, businesses
               and industrial facilities across South Africa.
             </p>
@@ -155,10 +163,31 @@ export default function ServicesPage() {
               {services.map((service, index) => (
                 <div
                   key={index}
-                  className="rounded-2xl border border-[#eeeeee] bg-white p-5 shadow-sm hover:shadow-md transition-shadow"
+                  className="group rounded-2xl border border-[#eeeeee] bg-white p-6 shadow-sm flex flex-col justify-between transition-transform transition-shadow duration-200 hover:-translate-y-1 hover:shadow-[0_12px_30px_rgba(15,23,42,0.16)]"
                 >
-                  <h3 className="text-sm font-semibold text-black mb-2">{service.title}</h3>
-                  <p className="text-sm text-[#555555]">{service.description}</p>
+                  <div>
+                    {service.icon && (
+                      <div className="mb-3 inline-flex h-10 w-10 items-center justify-center rounded-full bg-red-50 text-primary-red">
+                        <service.icon size={20} strokeWidth={1.7} />
+                      </div>
+                    )}
+                    <h3 className="text-sm font-semibold text-black mb-1.5">{service.title}</h3>
+                    <p className="text-sm text-[#555555] mb-4 leading-relaxed">{service.description}</p>
+                  </div>
+                  <div className="flex flex-wrap items-center gap-2 text-[11px] mt-auto">
+                    <a
+                      href="tel:+27861758623"
+                      className="inline-flex items-center justify-center rounded-full border border-primary-red bg-white px-3 py-1.5 font-semibold text-primary-red shadow-sm transition group-hover:bg-primary-red group-hover:text-white"
+                    >
+                      Call now
+                    </a>
+                    <a
+                      href="/contact-us"
+                      className="inline-flex items-center justify-center rounded-full border border-[#dddddd] bg-light-gray px-3 py-1.5 font-semibold text-[#333333] shadow-sm transition hover:border-primary-red hover:text-primary-red"
+                    >
+                      Request a quote
+                    </a>
+                  </div>
                 </div>
               ))}
             </div>

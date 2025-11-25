@@ -26,26 +26,29 @@ const HeroBanner = () => {
   const currentImage = heroImages[currentIndex];
 
   return (
-    <section ref={containerRef} className="w-full bg-white pb-16">
-      <div className="container mx-auto px-10">
-        <div className="grid gap-10 pt-10 sm:pt-16 lg:grid-cols-[minmax(0,1.4fr)_minmax(0,1fr)] lg:items-center">
+    <section
+      ref={containerRef}
+      className="w-full bg-white py-16 sm:py-20 lg:py-24 min-h-[80vh] flex items-center"
+    >
+      <div className="container mx-auto px-6 lg:px-10">
+        <div className="grid gap-12 lg:grid-cols-[minmax(0,1.4fr)_minmax(0,1fr)] lg:items-center">
           <div className="relative text-center lg:text-left">
             <div className="hero-animated-blob -left-24 -top-24 h-72 w-72 hidden lg:block" aria-hidden="true" />
             <div className="hero-animated-blob -right-10 bottom-[-60px] h-56 w-56 hidden lg:block opacity-60" aria-hidden="true" />
             {/* Emergency Response section */}
-            <p className="text-sm font-semibold uppercase tracking-[0.18em] text-[#999999]">
+            <p className="text-xs sm:text-sm font-semibold uppercase tracking-[0.18em] text-[#999999]">
               24/7 Emergency Response
             </p>
-            <h1 className="mt-3 text-4xl font-bold leading-tight text-black sm:text-[44px] lg:text-[48px]">
-              Trusted plumbers for
+            <h1 className="mt-3 text-4xl sm:text-[44px] lg:text-[52px] font-bold leading-tight text-black">
+              Fast, trusted plumbers for
               <br className="hidden sm:block" />
-              <span className="text-primary-red"> blocked drains</span> and
+              <span className="text-primary-red">blocked drains</span> and
               <br className="hidden sm:block" />
               emergency repairs.
             </h1>
-            <p className="mt-4 max-w-xl text-base leading-relaxed text-[#666666] mx-auto lg:mx-0">
-              The Drain Surgeon has provided professional plumbing services since 1979.
-              Fast, friendly, and security-cleared teams across South Africa.
+            <p className="mt-4 max-w-xl text-[15px] sm:text-base leading-relaxed text-[#555555] mx-auto lg:mx-0">
+              Professional plumbing services since 1979, with security-cleared teams on call 24/7 across South Africa
+              for homes, businesses and body corporates.
             </p>
 
             <div className="mt-8 flex flex-col items-center gap-4 sm:flex-row sm:justify-center lg:justify-start">
@@ -56,16 +59,24 @@ const HeroBanner = () => {
                 Call Now: +27 861 758 623
               </a>
               <a
-                href="#booking"
+                href="/contact-us"
                 className="inline-flex items-center justify-center rounded-full border border-[#dddddd] bg-white px-7 py-3 text-sm font-semibold text-[#333333] shadow-sm transition hover:border-primary-red hover:text-primary-red"
               >
-                Book a Plumber Online
+                Get a Quote
               </a>
             </div>
 
             <p className="mt-3 text-xs text-[#999999]">
               We aim to call you back within 15 minutes of receiving your request.
             </p>
+
+            <div className="mt-4 inline-flex flex-col items-center gap-2 rounded-full border border-[#e5e5e5] bg-white/70 px-4 py-2 text-[11px] text-[#555555] shadow-sm backdrop-blur-sm sm:flex-row sm:px-5 sm:py-2.5">
+              <span className="font-semibold text-[#222222]">Trusted plumbing experts since 1979</span>
+              <span className="hidden h-1 w-1 rounded-full bg-[#d4d4d4] sm:inline-block" aria-hidden="true" />
+              <span>Security-cleared, fully insured teams</span>
+              <span className="hidden h-1 w-1 rounded-full bg-[#d4d4d4] sm:inline-block" aria-hidden="true" />
+              <span>24/7 emergency coverage across South Africa</span>
+            </div>
           </div>
 
           <div className="relative overflow-hidden rounded-2xl border border-[#f0f0f0] bg-[#fafafa] p-6 shadow-sm">

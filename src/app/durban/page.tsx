@@ -192,11 +192,13 @@ export default function DurbanPage() {
               ].map((service, index) => (
                 <div
                   key={index}
-                  className="bg-white border-2 border-gray-200 rounded-lg p-6 hover:border-[var(--color-primary-red)] transition-colors"
+                  className="group rounded-2xl border border-gray-200 bg-white p-6 shadow-sm flex flex-col justify-between transition-transform transition-shadow duration-200 hover:-translate-y-1 hover:shadow-[0_12px_30px_rgba(15,23,42,0.14)] hover:border-[var(--color-primary-red)]"
                 >
-                  <h3 className="text-xl font-bold mb-2 text-black">{service.title}</h3>
-                  <p className="text-gray-600 mb-4 text-sm">{service.desc}</p>
-                  <p className="text-[var(--color-primary-red)] font-bold">{service.price}</p>
+                  <div>
+                    <h3 className="text-lg font-bold mb-1.5 text-black">{service.title}</h3>
+                    <p className="text-sm text-gray-600 mb-4 leading-relaxed">{service.desc}</p>
+                  </div>
+                  <p className="text-[var(--color-primary-red)] font-bold text-sm">{service.price}</p>
                 </div>
               ))}
             </div>
