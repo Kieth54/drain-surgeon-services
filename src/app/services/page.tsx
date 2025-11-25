@@ -3,7 +3,7 @@ import { AlertTriangle, Droplets, Flame, ScanLine, Shield, Wrench } from "lucide
 
 import Header from "@/components/sections/header";
 import Footer from "@/components/sections/footer";
-import VanImage from "@/assets/van-2.webp";
+import VanImage from "@/assets/plumb_1.webp";
 
 export default function ServicesPage() {
   const services = [

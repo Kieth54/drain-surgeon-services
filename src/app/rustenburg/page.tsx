@@ -3,10 +3,10 @@ import Image from "next/image";
 import Header from "@/components/sections/header";
 import Footer from "@/components/sections/footer";
 import BranchImageSlider from "@/components/branch/BranchImageSlider";
-import TruckImage from "@/assets/truck_1.webp";
 import RustenburgCityImage from "@/assets/Rustenburg.jpg";
 import RustenburgCityAltImage from "@/assets/Rustenburg (1).jpg";
 import PressureImage from "@/assets/pressure_new.webp";
+import PlumbImage from "@/assets/plumb_1.webp";
 
 export default function RustenburgPage() {
   return (
@@ -57,8 +57,8 @@ export default function RustenburgPage() {
               images={[
                 { src: RustenburgCityImage, alt: "Rustenburg skyline and mining region" },
                 { src: RustenburgCityAltImage, alt: "Alternative view of Rustenburg city" },
-                { src: TruckImage, alt: "The Drain Surgeon service truck in Rustenburg" },
-                { src: PressureImage, alt: "High-pressure plumbing equipment used by The Drain Surgeon" },
+                { src: PlumbImage, alt: "Plumbing van and team in Rustenburg" },
+                { src: PressureImage, alt: "High-pressure plumbing equipment in use" },
               ]}
             >
               <h2 className="text-sm font-semibold uppercase tracking-[0.18em] text-white mb-3 text-center">

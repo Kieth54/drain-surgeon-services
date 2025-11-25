@@ -1,7 +1,6 @@
 import Header from "@/components/sections/header";
 import Footer from "@/components/sections/footer";
 import Image from "next/image";
-import FindPlumberImage from "@/assets/blog/HOW TO FIND A PLUMBER NEAR YOU.webp";
 import PlumbImage from "@/assets/plumb_1.webp";
 import CameraImage from "@/assets/camera_nrew-1.webp";
 import { Phone, Mail, MapPin, Clock } from "lucide-react";
@@ -16,7 +15,7 @@ export default function ContactPage() {
             Contact Us
           </h1>
           <p className="text-center text-gray-600 mb-12 max-w-3xl mx-auto">
-            Get in touch with The Drain Surgeon. We're here to help 24/7.
+            Get in touch with your local plumbing company. This template is ready for 24/7 emergency enquiries.
           </p>
 
           <div className="grid lg:grid-cols-2 gap-12 max-w-6xl mx-auto">
@@ -29,7 +28,7 @@ export default function ContactPage() {
                 <div className="relative overflow-hidden rounded-2xl bg-[var(--color-primary-red)] text-white p-6 shadow-md">
                   <Image
                     src={PlumbImage}
-                    alt="Drain Surgeon plumber on site"
+                    alt="Plumber on site"
                     fill
                     className="absolute inset-0 h-full w-full object-cover opacity-25"
                   />
@@ -53,8 +52,8 @@ export default function ContactPage() {
                     <Mail className="w-6 h-6 mt-1 text-[var(--color-primary-red)] flex-shrink-0" />
                     <div>
                       <h3 className="font-bold text-lg mb-2 text-black">Email Us</h3>
-                      <a href="mailto:info@drainsurgeon.co.za" className="text-[var(--color-primary-red)] hover:underline">
-                        info@drainsurgeon.co.za
+                      <a href="mailto:info@yourplumbingcompany.com" className="text-[var(--color-primary-red)] hover:underline">
+                        info@yourplumbingcompany.com
                       </a>
                       <p className="mt-2 text-gray-600 text-sm">
                         For general inquiries and quotes
@@ -193,19 +192,19 @@ export default function ContactPage() {
             </div>
           </div>
 
-          {/* Map Section */}
-          <div className="mt-16">
-            <div className="bg-gray-200 rounded-lg h-96 flex items-center justify-center overflow-hidden">
-              <div className="relative w-full h-full max-w-3xl">
-                <Image
-                  src={FindPlumberImage}
-                  alt="Map showing Drain Surgeon service areas"
-                  fill
-                  className="object-contain object-center"
-                />
+            {/* Map Section */}
+            <div className="mt-16">
+              <div className="bg-gray-200 rounded-lg h-96 flex items-center justify-center overflow-hidden">
+                <div className="relative w-full h-full max-w-3xl">
+                  <Image
+                    src={CameraImage}
+                    alt="Illustrative map showing plumbing service areas"
+                    fill
+                    className="object-contain object-center"
+                  />
+                </div>
               </div>
             </div>
-          </div>
         </div>
       </main>
       <Footer />

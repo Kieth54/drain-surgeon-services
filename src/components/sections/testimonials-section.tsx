@@ -91,7 +91,8 @@ const TestimonialsSection = () => {
           Read our client feedback
         </h3>
         <p className="text-center text-sm text-dark-gray mb-10 max-w-xl mx-auto">
-          Real reviews from homeowners and businesses who trust The Drain Surgeon with their plumbing emergencies.
+          Real reviews from homeowners and businesses who trust their local plumbers with blocked drains,
+          leaks and everyday plumbing emergencies.
         </p>
 
         {displayTestimonials.length > 0 && (

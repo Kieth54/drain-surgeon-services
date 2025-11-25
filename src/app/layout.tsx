@@ -5,9 +5,9 @@ import ErrorReporter from "@/components/ErrorReporter";
 import Script from "next/script";
 
 export const metadata: Metadata = {
-  title: "The Drain Surgeon | 24/7 Emergency Plumbers",
+  title: "24/7 Emergency Plumbers | Professional Plumbing Template",
   description:
-    "Professional 24/7 emergency plumbing services across South Africa. Blocked drains, leak detection, geyser repairs and more from The Drain Surgeon.",
+    "Professional 24/7 emergency plumbing template for agencies and freelancers. Showcase blocked drain services, leak detection, geyser repairs and more for any local plumbing brand.",
 };
 
 export default function RootLayout({

@@ -10,6 +10,7 @@ import { useVisibilityOptimizedTimer } from '@/hooks/useOptimizedTimer';
 
 const HeroBanner = () => {
   const heroImages = [PlumberImage, PlumbImage, CameraImage];
+
   const [currentIndex, setCurrentIndex] = useState(0);
   const containerRef = useRef<HTMLElement | null>(null);
 
@@ -47,8 +48,8 @@ const HeroBanner = () => {
               emergency repairs.
             </h1>
             <p className="mt-4 max-w-xl text-[15px] sm:text-base leading-relaxed text-[#555555] mx-auto lg:mx-0">
-              Professional plumbing services since 1979, with security-cleared teams on call 24/7 across South Africa
-              for homes, businesses and body corporates.
+              A clean, conversion-focused template for any local plumbing company, with 24/7 emergency response,
+              blocked drain specialists and professional installation services.
             </p>
 
             <div className="mt-8 flex flex-col items-center gap-4 sm:flex-row sm:justify-center lg:justify-start">
@@ -71,11 +72,11 @@ const HeroBanner = () => {
             </p>
 
             <div className="mt-4 inline-flex flex-col items-center gap-2 rounded-full border border-[#e5e5e5] bg-white/70 px-4 py-2 text-[11px] text-[#555555] shadow-sm backdrop-blur-sm sm:flex-row sm:px-5 sm:py-2.5">
-              <span className="font-semibold text-[#222222]">Trusted plumbing experts since 1979</span>
+              <span className="font-semibold text-[#222222]">Trusted plumbing experts</span>
               <span className="hidden h-1 w-1 rounded-full bg-[#d4d4d4] sm:inline-block" aria-hidden="true" />
               <span>Security-cleared, fully insured teams</span>
               <span className="hidden h-1 w-1 rounded-full bg-[#d4d4d4] sm:inline-block" aria-hidden="true" />
-              <span>24/7 emergency coverage across South Africa</span>
+              <span>24/7 emergency coverage</span>
             </div>
           </div>
 
@@ -83,7 +84,7 @@ const HeroBanner = () => {
             <div className="pointer-events-none absolute inset-0">
               <Image
                 src={currentImage}
-                alt="Professional plumbing work from The Drain Surgeon"
+                alt="Professional plumbing work and equipment"
                 fill
                 sizes="(min-width: 1024px) 480px, 100vw"
                 className="object-cover opacity-40 transition-opacity duration-700"

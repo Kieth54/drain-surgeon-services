@@ -3,9 +3,9 @@ import Image from "next/image";
 import Header from "@/components/sections/header";
 import Footer from "@/components/sections/footer";
 import BranchImageSlider from "@/components/branch/BranchImageSlider";
-import OnJobImage from "@/assets/home-plumber-on-th-job.webp";
 import NelspruitCityImage from "@/assets/Nelspruit.jpg";
 import PlumbImage from "@/assets/plumb_1.webp";
+import CameraImage from "@/assets/camera_nrew-1.webp";
 
 export default function NelspruitPage() {
   return (
@@ -55,8 +55,8 @@ export default function NelspruitPage() {
             <BranchImageSlider
               images={[
                 { src: NelspruitCityImage, alt: "Nelspruit city skyline and surrounding area" },
-                { src: OnJobImage, alt: "The Drain Surgeon plumber working on site in Nelspruit" },
-                { src: PlumbImage, alt: "The Drain Surgeon plumbing team and equipment" },
+                { src: PlumbImage, alt: "Plumber working on site in Nelspruit" },
+                { src: CameraImage, alt: "Plumbing team and equipment" },
               ]}
             >
               <h2 className="text-sm font-semibold uppercase tracking-[0.18em] text-white mb-3">

@@ -3,8 +3,8 @@ import Footer from "@/components/sections/footer";
 import { MapPin, Clock, CheckCircle, Phone } from "lucide-react";
 import BranchImageSlider from "@/components/branch/BranchImageSlider";
 import KrugersdorpImage from "@/assets/Rustenburg (1).jpg";
-import VanImage from "@/assets/van-2.webp";
-import FixImage from "@/assets/fix.webp";
+import PlumbImage from "@/assets/plumb_1.webp";
+import CameraImage from "@/assets/camera_nrew-1.webp";
 
 export default function KrugersdorpPage() {
   const areas = [
@@ -45,8 +45,8 @@ export default function KrugersdorpPage() {
             <BranchImageSlider
               images={[
                 { src: KrugersdorpImage, alt: "Krugersdorp and West Rand area" },
-                { src: VanImage, alt: "The Drain Surgeon van in the West Rand" },
-                { src: FixImage, alt: "Plumbing repairs and maintenance work" },
+                { src: PlumbImage, alt: "Plumbing van in the West Rand" },
+                { src: CameraImage, alt: "Plumbing repairs and maintenance work" },
               ]}
             >
               <div className="relative z-10 max-w-xl mx-auto">

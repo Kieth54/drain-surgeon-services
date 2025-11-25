@@ -5,8 +5,8 @@ import Header from "@/components/sections/header";
 import Footer from "@/components/sections/footer";
 import ClientsSection from "@/components/sections/clients-section";
 import PlumberImage from "@/assets/plumber.png";
-import VanImage from "@/assets/van-2.webp";
-import OnJobImage from "@/assets/home-plumber-on-th-job.webp";
+import VanImage from "@/assets/plumb_1.webp";
+import OnJobImage from "@/assets/camera_nrew-1.webp";
 
 export default function AboutPage() {
   return (

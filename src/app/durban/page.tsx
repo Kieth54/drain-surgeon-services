@@ -75,8 +75,8 @@ export default function DurbanPage() {
                 Durban & KZN Service Areas
               </h2>
               <p className="text-gray-600 mb-6">
-                The Drain Surgeon provides professional plumbing services throughout Durban, 
-                from the CBD to Umhlanga and the North Coast, as well as the South Coast areas.
+                Use this layout for plumbing services across Durban – from the CBD to Umhlanga and the North and
+                South Coast areas – or adapt it to your own coastal service region.
               </p>
               <div className="grid grid-cols-2 gap-2 mb-6">
                 {areas.map((area, index) => (
@@ -213,7 +213,7 @@ export default function DurbanPage() {
                 ))}
               </div>
               <p className="text-gray-700 italic mb-4 text-lg">
-                "The Drain Surgeon team was professional, fast, and fixed our blocked drain perfectly. 
+                "The team was professional, fast, and fixed our blocked drain perfectly.
                 Highly recommend their service in Durban!"
               </p>
               <p className="text-gray-600 font-bold">- Durban Resident</p>

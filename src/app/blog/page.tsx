@@ -4,15 +4,12 @@ import { useState } from "react";
 import Image from "next/image";
 import Header from "@/components/sections/header";
 import Footer from "@/components/sections/footer";
-import hydrojettingImg from "@/assets/blog/hydrojetting.webp";
-import saveMoneyImg from "@/assets/blog/save-money-on-plumbing-bills-768x250.webp";
-import maintenanceImg from "@/assets/blog/Regular-Plumbing-Maintenance-768x250.webp";
-import blockedDrainDangerImg from "@/assets/blog/the dangers of ingnoring a blocked drain.webp";
-import unblockToiletImg from "@/assets/blog/How to Unblock a Toilet – The Ultimate Guide.webp";
-import holidayProblemsImg from "@/assets/blog/Common Holiday Plumbing Problems.webp";
-import tipTopDrainImg from "@/assets/blog/How To Keep Your Drain In Tip-Top Condition.webp";
-import runningToiletImg from "@/assets/blog/HOW TO FIX A RUNNING TOILET YOURSELF.webp";
-import preventLeaksImg from "@/assets/blog/PREVENT LEAKS.webp";
+import plumbImg from "@/assets/plumb_1.webp";
+import cameraImg from "@/assets/camera_nrew-1.webp";
+import burstImg from "@/assets/burst_pipes_new.webp";
+import geyserImg from "@/assets/geyser_new.webp";
+import runningToiletImg from "@/assets/HOW TO FIX A RUNNING TOILET YOURSELF.webp";
+import preventLeaksImg from "@/assets/PREVENT LEAKS.webp";
 
 type BlogPost = {
   title: string;
@@ -34,8 +31,8 @@ export default function BlogPage() {
         "Hydro jetting uses a high‑pressure hose and precision nozzle to send water through your drains at up to 8,000 PSI. The article explains when to consider it – like slow draining fixtures, bad smells, gurgling noises, recurring blockages and water pooling outside – and why it’s so effective. It doesn’t just punch a small hole: it scours the full pipe interior, removes fat, scale and roots, is eco‑friendly because it uses only water, works on most common pipe materials, and helps prevent costly future repairs. It also compares hydro jetting to snaking and harsh chemicals, showing why a full, non‑corrosive clean done by trained Drain Surgeon plumbers is safer and longer‑lasting than DIY options.",
       date: "2023-11-01",
       category: "Blocked Drains",
-      url: "https://drainsurgeon.co.za/hydro-jetting-drain-services-7-reasons-to-book-today/",
-      image: hydrojettingImg,
+      url: "https://example.com/hydro-jetting-drain-services-7-reasons-to-book-today/",
+      image: plumbImg,
     },
     {
       title: "How to save money on your plumbing bills",
@@ -44,8 +41,8 @@ export default function BlogPage() {
         "This article gives a clear checklist for bringing your plumbing costs down. It starts with scheduling regular maintenance so small faults are fixed before they become expensive, and urges you to repair leaks as soon as you spot them so water and money aren’t wasted. It explains how insulating hot‑water pipes and using low‑flow shower heads and toilets can cut both water and energy bills, and why being careful about what you put down the drain helps avoid costly blockages. It also recommends keeping a small emergency plumbing fund for unexpected repairs, and reminds you that Drain Surgeon’s security‑screened plumbers are available 24/7 to help with anything from minor leaks to major breakdowns.",
       date: "2023-10-20",
       category: "Saving Money",
-      url: "https://drainsurgeon.co.za/how-to-save-money-on-your-plumbing-bills/",
-      image: saveMoneyImg,
+      url: "https://example.com/how-to-save-money-on-your-plumbing-bills/",
+      image: cameraImg,
     },
     {
       title: "The importance of regular plumbing maintenance",
@@ -54,8 +51,8 @@ export default function BlogPage() {
         "Regular plumbing maintenance is all about preventing problems before they become disasters. The article explains how planned inspections help detect early signs of leaks, corrosion and blocked drains, reducing the risk of burst pipes, sewage overflows and water damage inside walls or under floors. By keeping pipes, geysers and drainage in good condition, you protect your family’s health, avoid structural damage to your home and extend the lifespan of your plumbing system – which means far fewer emergency call‑outs and big repair bills over time.",
       date: "2023-09-30",
       category: "Maintenance",
-      url: "https://drainsurgeon.co.za/importance-of-regular-plumbing-maintenance/",
-      image: maintenanceImg,
+      url: "https://example.com/importance-of-regular-plumbing-maintenance/",
+      image: geyserImg,
     },
     {
       title: "The dangers of ignoring a blocked drain",
@@ -64,8 +61,8 @@ export default function BlogPage() {
         "A slow or blocked drain is more than an inconvenience – it can lead to overflowing sewage, bad smells in your home and even structural damage if water starts undermining foundations. The Drain Surgeon article walks through early warning signs, health risks from contaminated water and why getting a professional in quickly is the safest option.",
       date: "2023-09-10",
       category: "Blocked Drains",
-      url: "https://drainsurgeon.co.za/the-dangers-of-ignoring-a-blocked-drain/",
-      image: blockedDrainDangerImg,
+      url: "https://example.com/the-dangers-of-ignoring-a-blocked-drain/",
+      image: burstImg,
     },
     {
       title: "How to unblock your toilet",
@@ -74,8 +71,8 @@ export default function BlogPage() {
         "This step‑by‑step guide explains how to deal with a blocked toilet calmly and safely. It covers which plungers work best, how to use them correctly, why you should be careful with chemical products, and when a more serious blockage in the main line means it’s time to stop trying and call a professional plumber.",
       date: "2023-08-25",
       category: "How To",
-      url: "https://drainsurgeon.co.za/how-to-unblock-your-toilet/",
-      image: unblockToiletImg,
+      url: "https://example.com/how-to-unblock-your-toilet/",
+      image: plumbImg,
     },
     {
       title: "Common holiday plumbing problems",
@@ -84,8 +81,8 @@ export default function BlogPage() {
         "The festive season puts extra pressure on your plumbing as more people use the kitchen and bathrooms. The article lists typical holiday problems – like guests over‑flushing toilets, fat and grease going down the sink, and pipes bursting while you’re away – and gives practical tips to prepare your home before the holidays begin.",
       date: "2023-08-05",
       category: "Seasonal Tips",
-      url: "https://drainsurgeon.co.za/common-holiday-plumbing-problems/",
-      image: holidayProblemsImg,
+      url: "https://example.com/common-holiday-plumbing-problems/",
+      image: cameraImg,
     },
     {
       title: "How to keep your drain in tip-top condition",
@@ -94,17 +91,17 @@ export default function BlogPage() {
         "Good drain habits make a huge difference over time. This piece explains what should and shouldn’t go down your kitchen sink, how strainers and regular hot‑water flushes help, and why cleaning outside gulleys and stormwater drains before rainy season can prevent unexpected flooding.",
       date: "2023-07-18",
       category: "Prevention",
-      url: "https://drainsurgeon.co.za/how-to-keep-your-drain-in-tip-top-condition/",
-      image: tipTopDrainImg,
+      url: "https://example.com/how-to-keep-your-drain-in-tip-top-condition/",
+      image: geyserImg,
     },
     {
       title: "Want to fix a running toilet? Here's how",
-      excerpt: "A practical walkthrough for diagnosing and fixing a running toilet, and when to call The Drain Surgeon.",
+      excerpt: "A practical walkthrough for diagnosing and fixing a running toilet, and when to call a plumber.",
       longDescription:
-        "A running toilet can quietly waste hundreds of litres of water. The Drain Surgeon shows you how to check the flapper, float and fill valve inside the cistern, what simple adjustments you can make yourself, and when worn parts or hidden leaks mean you should rather book a qualified plumber.",
+        "A running toilet can quietly waste hundreds of litres of water. This guide shows you how to check the flapper, float and fill valve inside the cistern, what simple adjustments you can make yourself, and when worn parts or hidden leaks mean you should rather book a qualified plumber.",
       date: "2023-07-01",
       category: "How To",
-      url: "https://drainsurgeon.co.za/want-to-fix-a-running-toilet-heres-how/",
+      url: "https://example.com/how-to-fix-a-running-toilet-yourself/",
       image: runningToiletImg,
     },
     {
@@ -114,7 +111,7 @@ export default function BlogPage() {
         "This guide focuses on stopping leaks before they start. It looks at common weak points like flexible hoses to toilets and basins, old galvanised pipes and high water pressure, and explains how simple checks – including watching your water meter when everything is off – can reveal hidden leaks early.",
       date: "2023-06-15",
       category: "Prevention",
-      url: "https://drainsurgeon.co.za/prevent-leaks-at-home/",
+      url: "https://example.com/prevent-leaks-in-your-home-heres-how/",
       image: preventLeaksImg,
     },
   ];

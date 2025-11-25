@@ -1,24 +1,16 @@
 "use client";
 
 import { useState } from "react";
-import Image from "next/image";
 import Link from "next/link";
 import { Menu, X } from "lucide-react";
-import Logo from "@/assets/logo.png";
 
 const navItems = [
   { name: "Home", href: "/" },
   { name: "About", href: "/about" },
   { name: "Services", href: "/services" },
-  { name: "Products", href: "/products" },
   { name: "FAQ", href: "/faq" },
-  { name: "Find Your Branch", href: "/find-branch" },
-  { name: "Download App", href: "/download-app" },
-  { name: "Franchise", href: "/franchise" },
   { name: "Testimonials", href: "/testimonials" },
   { name: "Blog", href: "/blog" },
-  { name: "TV Adverts", href: "/tv-adverts" },
-  { name: "How to Videos", href: "/how-to-videos" },
   { name: "Contact", href: "/contact-us" },
 ];
 
@@ -34,17 +26,13 @@ const Header = () => {
         <div className="pt-4 flex justify-center">
           <div className="flex w-full max-w-3xl items-center justify-between rounded-full border border-white/40 bg-white/5 px-3 sm:px-4 py-1.5 sm:py-2 shadow-[0_8px_24px_rgba(15,23,42,0.10)] backdrop-blur supports-[backdrop-filter]:bg-white/5">
             <Link href="/" className="flex items-center gap-2 sm:gap-3">
-              <div className="relative h-[30px] w-[100px] sm:h-[36px] sm:w-[130px]">
-                <Image
-                  src={Logo}
-                  alt="THE DRAIN SURGEON - No job too deep, too dark, or too dirty"
-                  fill
-                  sizes="(max-width: 640px) 160px, 220px"
-                  className="object-contain"
-                  priority
-                />
+              <div className="flex items-center justify-center rounded-full bg-white/90 px-4 py-1.5 shadow-sm border border-white/70">
+                <span className="text-xs sm:text-sm font-semibold tracking-[0.18em] uppercase text-[#333333]">
+                  Plumbing Co.
+                </span>
               </div>
             </Link>
+
             <div className="flex items-center gap-2 sm:gap-3">
               <a
                 href="tel:+27861758623"

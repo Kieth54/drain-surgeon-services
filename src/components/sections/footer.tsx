@@ -60,8 +60,8 @@ const Footer = () => {
                                     24/7 Emergency Plumbing &amp; Drains
                                 </p>
                                 <p className="text-white/90 text-[12px] max-w-xs">
-                                    The Drain Surgeon provides nationwide, security-cleared plumbing teams on call
-                                    day and night for homes, businesses and industrial sites.
+                                    A nationwide-style plumbing template with security-cleared teams on call day and
+                                    night for homes, businesses and industrial sites.
                                 </p>
                                 <a
                                     href="tel:+27861758623"
@@ -75,17 +75,23 @@ const Footer = () => {
                                     Quick Links
                                 </p>
                                 <div className="flex flex-col gap-1 text-[12px] text-white/85">
+                                    <Link href="/" className="hover:underline">
+                                        Home
+                                    </Link>
+                                    <Link href="/about" className="hover:underline">
+                                        About
+                                    </Link>
                                     <Link href="/services" className="hover:underline">
                                         Services
                                     </Link>
-                                    <Link href="/find-branch" className="hover:underline">
-                                        Find Your Branch
+                                    <Link href="/faq" className="hover:underline">
+                                        FAQ
                                     </Link>
-                                    <Link href="/download-app" className="hover:underline">
-                                        Download App
+                                    <Link href="/testimonials" className="hover:underline">
+                                        Testimonials
                                     </Link>
-                                    <Link href="/franchise" className="hover:underline">
-                                        Franchise
+                                    <Link href="/blog" className="hover:underline">
+                                        Blog
                                     </Link>
                                     <Link href="/contact-us" className="hover:underline">
                                         Contact Us
@@ -98,8 +104,8 @@ const Footer = () => {
                                 </p>
                                 <div className="space-y-1 text-[12px] text-white/85">
                                     <p>
-                                        <a href="mailto:info@drainsurgeon.co.za" className="hover:underline">
-                                            info@drainsurgeon.co.za
+                                        <a href="mailto:info@yourplumbingcompany.com" className="hover:underline">
+                                            info@yourplumbingcompany.com
                                         </a>
                                     </p>
                                     <p className="text-white/80">24 hours a day, 7 days a week</p>
@@ -115,14 +121,11 @@ const Footer = () => {
                 <div className="border-t border-t-[rgba(255,255,255,0.18)]">
                     <div className="container py-4">
                       <div className="text-center text-[12px] leading-[22px] text-white/80">
-                          Plan Two Plumbing Services (PTY) LTD 2023 &copy; All Rights Reserved |{' '}
+                          {new Date().getFullYear()} Your Plumbing Company. All rights reserved |{' '}
                           <Link href="/privacy-policy" className="font-medium text-white hover:underline">
                               View Our Privacy Policy
                           </Link>
-                          {' '} | Developed by {' '}
-                          <a href="http://networds.co.za" target="_blank" rel="noopener noreferrer" className="font-medium text-white hover:underline">
-                              Networds
-                          </a>
+                          {' '} | Built with the Plumbing Template
                       </div>
                     </div>
                 </div>

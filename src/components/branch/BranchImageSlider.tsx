@@ -5,7 +5,7 @@ import Image, { type StaticImageData } from "next/image";
 import { useOptimizedTimer } from "@/hooks/useOptimizedTimer";
 
 type BranchImage = {
-  src: StaticImageData;
+  src: StaticImageData | string;
   alt: string;
 };
 

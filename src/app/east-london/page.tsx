@@ -3,9 +3,9 @@ import Image from "next/image";
 import Header from "@/components/sections/header";
 import Footer from "@/components/sections/footer";
 import BranchImageSlider from "@/components/branch/BranchImageSlider";
-import TeamImage from "@/assets/guys-1.webp";
 import EastLondonCityImage from "@/assets/East London.jpg";
-import CutImage from "@/assets/cut.webp";
+import PlumbImage from "@/assets/plumb_1.webp";
+import CameraImage from "@/assets/camera_nrew-1.webp";
 
 export default function EastLondonPage() {
   return (
@@ -55,8 +55,8 @@ export default function EastLondonPage() {
             <BranchImageSlider
               images={[
                 { src: EastLondonCityImage, alt: "East London beachfront and city" },
-                { src: TeamImage, alt: "The Drain Surgeon team in East London" },
-                { src: CutImage, alt: "Drain cutting and plumbing equipment in use" },
+                { src: PlumbImage, alt: "Plumbing team on site in East London" },
+                { src: CameraImage, alt: "Drain inspection and plumbing equipment in use" },
               ]}
             >
               <h2 className="text-sm font-semibold uppercase tracking-[0.18em] text-white mb-3">

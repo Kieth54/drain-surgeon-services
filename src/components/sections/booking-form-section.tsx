@@ -3,7 +3,6 @@
 import { useState, useEffect } from "react";
 import Image from "next/image";
 import { Clock } from "lucide-react";
-import VanImage from "@/assets/van-2.webp";
 import PlumbImage from "@/assets/plumb_1.webp";
 import CameraImage from "@/assets/camera_nrew-1.webp";
 import CapeTownImage from "@/assets/Cape Town.jpg";
@@ -14,51 +13,22 @@ import NelspruitImage from "@/assets/Nelspruit.jpg";
 import RustenburgImage from "@/assets/Rustenburg.jpg";
 import HuurkorImage from "@/assets/huurkor.jpg";
 import BurstPipesImage from "@/assets/burst_pipes_new.webp";
-import CutImage from "@/assets/cut.webp";
-import DrainActivatorImage from "@/assets/drainactivator_150.webp";
-import DrainCleanerImage from "@/assets/draincleaner_150.webp";
-import DrainCleanerAltImage from "@/assets/draincleaner_150-1.webp";
-import FixImage from "@/assets/fix.webp";
 import GeyserImage from "@/assets/geyser_new.webp";
-import GuysImage from "@/assets/guys-1.webp";
-import HomePlumberImage from "@/assets/home-plumber-on-th-job.webp";
 import PlumberCutoutImage from "@/assets/plumber.png";
 import PressureImage from "@/assets/pressure_new.webp";
 import SepticImage from "@/assets/septic_1.webp";
-import BlogBestBlockedImage from "@/assets/blog/BEST BLOCKED DRAINS SOLUTIONS.webp";
-import BlogBlockedDrainBiggerProblemsImage from "@/assets/blog/BLOCKED DRAIN – BIGGER PROBLEMS.webp";
-import BlogBlockedDrainBiggerProblemsAltImage from "@/assets/blog/BLOCKED DRAIN – BIGGER PROBLEMSo.webp";
-import BlogFlushAnimalPooImage from "@/assets/blog/CAN I FLUSH ANIMAL POO – TO FLUSH OR NOT TO FLUSH.webp";
-import BlogCommonGeyserProblemsImage from "@/assets/blog/COMMON PROBLEMS WITH GEYSERS.webp";
-import BlogCommonHolidayProblemsImage from "@/assets/blog/Common Holiday Plumbing Problems.webp";
-import BlogWinterReadyImage from "@/assets/blog/GET YOUR PLUMBING WINTER-READY.webp";
-import BlogFindPlumberImage from "@/assets/blog/HOW TO FIND A PLUMBER NEAR YOU.webp";
-import BlogFixRunningToiletImage from "@/assets/blog/HOW TO FIX A RUNNING TOILET YOURSELF.webp";
-import BlogPlumbingLicenseImage from "@/assets/blog/HOW TO GET A PLUMBING LICENSE.webp";
-import BlogRemoveRustStainsImage from "@/assets/blog/HOW TO REMOVE STUBBORN RUST STAINS FROM YOUR TOILET.webp";
-import BlogPipesWornOutImage from "@/assets/blog/HOW TO TELL IF YOUR PIPES ARE WORN OUT.webp";
-import BlogUnblockSoilPipesImage from "@/assets/blog/HOW TO UNBLOCK SOIL PIPES.webp";
-import BlogDrainTipTopImage from "@/assets/blog/How To Keep Your Drain In Tip-Top Condition.webp";
-import BlogUnblockToiletGuideImage from "@/assets/blog/How to Unblock a Toilet – The Ultimate Guide.webp";
-import BlogPreventLeaksImage from "@/assets/blog/PREVENT LEAKS.webp";
-import BlogRisksBusinessImage from "@/assets/blog/Plumbing Risks In Your Business.webp";
-import BlogPlumbingTipsUnblockToiletImage from "@/assets/blog/Plumbing Tips – How To Unblock Your Toilet.webp";
-import BlogRegularMaintenanceImage from "@/assets/blog/Regular-Plumbing-Maintenance-768x250.webp";
-import BlogCommonProblemsAvoidImage from "@/assets/blog/THE MOST COMMON PLUMBING PROBLEMS AND HOW TO AVOID THEM.webp";
-import BlogBestPlumberCapeTownImage from "@/assets/blog/The Best Plumber In Cape Town.webp";
-import BlogBestPlumberPretoriaImage from "@/assets/blog/The Best Plumber In Pretoria.webp";
-import BlogBurstGeyserImage from "@/assets/blog/WHAT TO DO WHEN YOUR ELECTRICAL GEYSER BURSTS.webp";
-import BlogGreatPlumbingCompanyImage from "@/assets/blog/WHAT TO LOOK FOR IN A GREAT, PROFESSIONAL PLUMBING COMPANY.webp";
-import BlogCommonGeyserProblems1Image from "@/assets/blog/common-problems-with-geysers 1.webp";
-import BlogCommonGeyserProblems2Image from "@/assets/blog/common-problems-with-geysers 2.webp";
-import BlogRemoveRustStainsAltImage from "@/assets/blog/how-to-remove-stubborn-rust-stains-from-your-toilet.webp";
-import BlogPipesWornOutAltImage from "@/assets/blog/how-to-tell-if-your-pipes-are-worn-out.webp";
-import BlogHydrojettingImage from "@/assets/blog/hydrojetting.webp";
-import BlogSaveMoneyBillsImage from "@/assets/blog/save-money-on-plumbing-bills-768x250.webp";
-import BlogIgnoringBlockedDrainImage from "@/assets/blog/the dangers of ingnoring a blocked drain.webp";
-import BlogTimeForGeyserServiceImage from "@/assets/blog/time for a geyser service.webp";
-import BlogBurstGeyserAltImage from "@/assets/blog/what-to-do-when-your-electrical-geyser-bursts.webp";
-import BlogGreatPlumbingCompanyAltImage from "@/assets/blog/what-to-look-for-in-a-great-professional-plumbing-company.webp";
+import BlogCommonGeyserProblemsImage from "@/assets/COMMON PROBLEMS WITH GEYSERS.webp";
+import BlogWinterReadyImage from "@/assets/GET YOUR PLUMBING WINTER-READY.webp";
+import BlogFixRunningToiletImage from "@/assets/HOW TO FIX A RUNNING TOILET YOURSELF.webp";
+import BlogRemoveRustStainsImage from "@/assets/how-to-remove-stubborn-rust-stains-from-your-toilet.webp";
+import BlogPipesWornOutImage from "@/assets/how-to-tell-if-your-pipes-are-worn-out.webp";
+import BlogUnblockSoilPipesImage from "@/assets/HOW TO UNBLOCK SOIL PIPES.webp";
+import BlogPreventLeaksImage from "@/assets/PREVENT LEAKS.webp";
+import BlogCommonGeyserProblems1Image from "@/assets/common-problems-with-geysers 1.webp";
+import BlogCommonGeyserProblems2Image from "@/assets/common-problems-with-geysers 2.webp";
+import BlogRemoveRustStainsAltImage from "@/assets/how-to-remove-stubborn-rust-stains-from-your-toilet.webp";
+import BlogPipesWornOutAltImage from "@/assets/how-to-tell-if-your-pipes-are-worn-out.webp";
+import BlogBurstGeyserAltImage from "@/assets/what-to-do-when-your-electrical-geyser-bursts.webp";
 
 import { useOptimizedTimer } from "@/hooks/useOptimizedTimer";
 
@@ -68,13 +38,13 @@ const servicesData = [
   { id: 'leak-detection', name: 'Leak Detection', description: 'Leak Detection Incl. 1 Hour Labour', oldPrice: 2085, newPrice: 1785, materials: '(Excluding Materials)' },
 ];
 
-const sliderImages = [VanImage, PlumbImage, CameraImage];
+const sliderImages = [PlumbImage, CameraImage];
 
-// Expanded gallery images: all major marketing and blog assets (excluding clearly unsafe filenames)
+// Expanded gallery images: all major marketing and blog assets
 const galleryImages = [
-  VanImage,
   PlumbImage,
   CameraImage,
+
   CapeTownImage,
   DurbanImage,
   EastLondonImage,
@@ -83,51 +53,24 @@ const galleryImages = [
   RustenburgImage,
   HuurkorImage,
   BurstPipesImage,
-  CutImage,
-  DrainActivatorImage,
-  DrainCleanerImage,
-  DrainCleanerAltImage,
-  FixImage,
   GeyserImage,
-  GuysImage,
-  HomePlumberImage,
+
+  GeyserImage,
   PlumberCutoutImage,
   PressureImage,
   SepticImage,
-  BlogBestBlockedImage,
-  BlogBlockedDrainBiggerProblemsImage,
-  BlogBlockedDrainBiggerProblemsAltImage,
-  BlogFlushAnimalPooImage,
   BlogCommonGeyserProblemsImage,
-  BlogCommonHolidayProblemsImage,
   BlogWinterReadyImage,
-  BlogFindPlumberImage,
   BlogFixRunningToiletImage,
-  BlogPlumbingLicenseImage,
   BlogRemoveRustStainsImage,
   BlogPipesWornOutImage,
   BlogUnblockSoilPipesImage,
-  BlogDrainTipTopImage,
-  BlogUnblockToiletGuideImage,
   BlogPreventLeaksImage,
-  BlogRisksBusinessImage,
-  BlogPlumbingTipsUnblockToiletImage,
-  BlogRegularMaintenanceImage,
-  BlogCommonProblemsAvoidImage,
-  BlogBestPlumberCapeTownImage,
-  BlogBestPlumberPretoriaImage,
-  BlogBurstGeyserImage,
-  BlogGreatPlumbingCompanyImage,
   BlogCommonGeyserProblems1Image,
   BlogCommonGeyserProblems2Image,
   BlogRemoveRustStainsAltImage,
   BlogPipesWornOutAltImage,
-  BlogHydrojettingImage,
-  BlogSaveMoneyBillsImage,
-  BlogIgnoringBlockedDrainImage,
-  BlogTimeForGeyserServiceImage,
   BlogBurstGeyserAltImage,
-  BlogGreatPlumbingCompanyAltImage,
 ];
 
 const BookingFormSection = () => {
@@ -207,7 +150,7 @@ const BookingFormSection = () => {
               </span>
               <div>
                 <p className="font-semibold text-black">We confirm your booking</p>
-                <p>Our control room calls you back within 15 minutes to confirm.</p>
+                <p>Our team calls you back within 15 minutes to confirm.</p>
               </div>
             </div>
             <div className="flex items-start gap-2">
@@ -216,7 +159,7 @@ const BookingFormSection = () => {
               </span>
               <div>
                 <p className="font-semibold text-black">Plumber on the way</p>
-                <p>A security-cleared Drain Surgeon plumber is dispatched to your door.</p>
+                <p>A security-cleared local plumber is dispatched to your door.</p>
               </div>
             </div>
           </div>

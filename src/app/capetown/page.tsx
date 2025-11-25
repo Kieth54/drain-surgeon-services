@@ -5,8 +5,6 @@ import BranchImageSlider from "@/components/branch/BranchImageSlider";
 import CapeTownImage from "@/assets/Cape Town.jpg";
 import PlumbImage from "@/assets/plumb_1.webp";
 import CameraImage from "@/assets/camera_nrew-1.webp";
-import HomePlumberImage from "@/assets/home-plumber-on-th-job.webp";
-import GuysImage from "@/assets/guys-1.webp";
 import BurstPipesImage from "@/assets/burst_pipes_new.webp";
 
 export default function CapeTownPage() {
@@ -42,11 +40,11 @@ export default function CapeTownPage() {
             <BranchImageSlider
               images={[
                 { src: CapeTownImage, alt: "Cape Town city and Table Mountain" },
-                { src: PlumbImage, alt: "The Drain Surgeon plumbing team on site" },
+                { src: PlumbImage, alt: "Plumbing team on site in Cape Town" },
                 { src: CameraImage, alt: "CCTV drain inspection equipment in use" },
-                { src: HomePlumberImage, alt: "Plumber from The Drain Surgeon working on site" },
-                { src: GuysImage, alt: "Drain Surgeon team members" },
                 { src: BurstPipesImage, alt: "Repairing burst pipes in Cape Town" },
+                { src: PlumbImage, alt: "Plumbing van and tools" },
+                { src: CameraImage, alt: "Team member using inspection equipment" },
               ]}
             >
               <div className="relative z-10 max-w-xl mx-auto">
@@ -82,8 +80,8 @@ export default function CapeTownPage() {
                 Cape Town Service Coverage
               </h2>
               <p className="text-gray-600 mb-6">
-                The Drain Surgeon provides comprehensive plumbing services throughout Cape Town, 
-                from the CBD and Atlantic Seaboard to the Northern and Southern Suburbs, and the Helderberg area.
+                This template is ideal for plumbing companies serving Cape Town and surrounds – from the CBD and
+                Atlantic Seaboard to the Northern and Southern Suburbs and the Helderberg area.
               </p>
               <div className="grid grid-cols-2 gap-2 mb-6">
                 {areas.map((area, index) => (

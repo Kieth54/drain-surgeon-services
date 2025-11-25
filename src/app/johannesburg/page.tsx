@@ -3,8 +3,8 @@ import Footer from "@/components/sections/footer";
 import { MapPin, Clock, Wrench, CheckCircle } from "lucide-react";
 import BranchImageSlider from "@/components/branch/BranchImageSlider";
 import JohannesburgImage from "@/assets/Johannesburg.jpg";
-import VanImage from "@/assets/van-2.webp";
-import OnJobImage from "@/assets/home-plumber-on-th-job.webp";
+import PlumbImage from "@/assets/plumb_1.webp";
+import CameraImage from "@/assets/camera_nrew-1.webp";
 
 export default function JohannesburgPage() {
   const suburbs = [
@@ -37,8 +37,8 @@ export default function JohannesburgPage() {
             <BranchImageSlider
               images={[
                 { src: JohannesburgImage, alt: "Johannesburg city skyline" },
-                { src: VanImage, alt: "The Drain Surgeon van serving Johannesburg" },
-                { src: OnJobImage, alt: "Plumber from The Drain Surgeon working on site" },
+                { src: PlumbImage, alt: "Plumbing van and team in Johannesburg" },
+                { src: CameraImage, alt: "Plumber working on site in Johannesburg" },
               ]}
             >
               <div className="relative z-10 max-w-xl mx-auto">
@@ -74,8 +74,8 @@ export default function JohannesburgPage() {
                 Johannesburg Service Areas
               </h2>
               <p className="text-gray-600 mb-6">
-                The Drain Surgeon provides professional plumbing services to all areas of Johannesburg, 
-                including surrounding suburbs and townships. Our local teams know the city inside out.
+                This template is designed for plumbing teams serving all areas of Johannesburg and nearby
+                suburbs. Local crews know the city inside out and respond quickly to emergencies.
               </p>
               <div className="grid grid-cols-2 gap-2 mb-6">
                 {suburbs.map((suburb, index) => (
